@@ -1,0 +1,19 @@
+{
+	"groups": [
+		{
+			"name": "Cooling",
+			"PVs": [
+				{"name": "CBM:MVD:COOLING:CC405:BathTemperatureMom"},
+				{"name": "CBM:MVD:COOLING:CC405:ExternalTemperatureMom"}
+				]
+		},
+		{
+			"name": "Pressure",
+			"PVs": [
+				{"name": "CBM:MVD:VACUUM:PRESTO_RECIPIENT:A:TPR2:Voltage"},
+				{"name": "CBM:MVD:VACUUM:RECIPIENT:3:Pressure"},
+				{"name": "CBM:MVD:VACUUM:RECIPIENT:3:Status"}
+				]
+		}
+  ]
+}

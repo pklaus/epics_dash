@@ -30,7 +30,7 @@ def static_content(path):
 def main():
     global CONFIG
 
-    import argparse
+    import argparse, sys
     parser = argparse.ArgumentParser()
     parser.add_argument('--host', default='',
           help='The host (IP address) the web server should listen on.')
@@ -43,7 +43,12 @@ def main():
     args = parser.parse_args()
 
     with open(args.config, 'r') as f:
-        CONFIG = json.load(f)
+        try:
+            CONFIG = json.load(f)
+        except Exception as e:
+            sys.stderr.write("Error loading --config file.\n")
+            sys.stderr.write(str(e) + "\n")
+            sys.exit(1)
 
     run(host=args.host, port=args.port, debug=args.debug)
 

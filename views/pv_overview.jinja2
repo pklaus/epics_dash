@@ -30,7 +30,7 @@
 						{% for PV in group.PVs %}
 						<tr>
 							<td>{{ PV.name }}</td>
-							<td>{{ PV.value }}</td>
+							<td class="{{ PV.classes }}">{{ PV.value }}</td>
 							<td>{{ PV.unit }}</td>
 						</tr>
 						{% endfor %}

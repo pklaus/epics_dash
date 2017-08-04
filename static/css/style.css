@@ -21,3 +21,6 @@
 .Cooling table, th {
   text-align: left;
 }
+.invalid_alarm {
+  background-color: red;
+}

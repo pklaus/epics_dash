@@ -16,6 +16,13 @@ def index():
         for pv in group['PVs']:
             p = epics.PV(pv['name'])
             p.get_ctrlvars()
+            class_map = {
+              epics.NO_ALARM :      "",
+              epics.MINOR_ALARM :   "minor_alarm",
+              epics.MAJOR_ALARM :   "major_alarm",
+              epics.INVALID_ALARM : "invalid_alarm",
+            }
+            pv['classes'] = class_map[p.severity]
             if 'enum' in p.type:
                 pv['value'] = p.get(as_string=True)
             else:

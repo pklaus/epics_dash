@@ -8,9 +8,7 @@ from bottle import jinja2_view as view
 
 CONFIG = None
 
-@route('/')
-@view('pv_overview.jinja2')
-def index():
+def update_values():
     global CONFIG
     for group in CONFIG['groups']:
         for pv in group['PVs']:
@@ -28,6 +26,16 @@ def index():
             else:
                 pv['value'] = p.get()
             pv['unit'] = p.units or ''
+
+@route('/')
+@view('pv_overview.jinja2')
+def index():
+    update_values()
+    return CONFIG
+
+@route('/api/values.json')
+def index():
+    update_values()
     return CONFIG
 
 @route('/static/<path:path>')

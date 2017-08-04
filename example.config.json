@@ -4,16 +4,28 @@
 			"name": "Cooling",
 			"PVs": [
 				{"name": "CBM:MVD:COOLING:CC405:BathTemperatureMom"},
-				{"name": "CBM:MVD:COOLING:CC405:ExternalTemperatureMom"}
+				{"name": "CBM:MVD:COOLING:CC405:ExternalTemperatureMom"},
+				{"name": "CBM:MVD:COOLING:CC405:SetpointMom"},
+				{"name": "CBM:MVD:COOLING:CC405:FLOW:IN:Flow"},
+				{"name": "CBM:MVD:COOLING:CC405:FLOW:IN:Total"},
+				{"name": "CBM:MVD:COOLING:CC405:FLOW:OUT:Flow"},
+				{"name": "CBM:MVD:COOLING:CC405:FLOW:OUT:Total"}
 				]
 		},
 		{
 			"name": "Pressure",
 			"PVs": [
-				{"name": "CBM:MVD:VACUUM:PRESTO_RECIPIENT:A:TPR2:Voltage"},
+				{"name": "CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_A:IKR:Voltage"},
+				{"name": "CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_A:TPR2:Voltage"},
+				{"name": "CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_B:IKR:Voltage"},
+				{"name": "CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_B:TPR2:Voltage"},
+				{"name": "CBM:MVD:VACUUM:RECIPIENT:1:Pressure"},
+				{"name": "CBM:MVD:VACUUM:RECIPIENT:1:Status"},
+				{"name": "CBM:MVD:VACUUM:RECIPIENT:2:Pressure"},
+				{"name": "CBM:MVD:VACUUM:RECIPIENT:2:Status"},
 				{"name": "CBM:MVD:VACUUM:RECIPIENT:3:Pressure"},
 				{"name": "CBM:MVD:VACUUM:RECIPIENT:3:Status"}
 				]
 		}
-  ]
+	]
 }

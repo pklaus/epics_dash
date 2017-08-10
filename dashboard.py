@@ -19,12 +19,14 @@ def update_values():
               epics.MINOR_ALARM :   "minor_alarm",
               epics.MAJOR_ALARM :   "major_alarm",
               epics.INVALID_ALARM : "invalid_alarm",
+              None : "disconnected",
             }
             pv['classes'] = class_map[p.severity]
             if 'enum' in p.type:
                 pv['value'] = p.get(as_string=True)
             else:
                 pv['value'] = p.get()
+            if pv['value'] is None: pv['value'] = '- disconnected -'
             pv['unit'] = p.units or ''
 
 @route('/')

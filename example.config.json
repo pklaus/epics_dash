@@ -26,6 +26,39 @@
 				{"name": "CBM:MVD:VACUUM:RECIPIENT:3:Pressure"},
 				{"name": "CBM:MVD:VACUUM:RECIPIENT:3:Status"}
 				]
+		},
+		{
+                        "name": "Low Voltage",
+                        "PVs": [
+			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:GetGeneralOutput"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOutput"},  
+			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOutput"},  
+			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOutput"},  
+				{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetVoltage"},
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetVoltage"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetVoltage"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetCurrent"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetCurrent"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetCurrent"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:MeasuredVoltage"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:MeasuredVoltage"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:MeasuredVoltage"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:MeasuredCurrent"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:MeasuredCurrent"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:MeasuredCurrent"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOVPVoltage"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOVPVoltage"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPVoltage"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOVPVoltageMin"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOVPVoltageMin"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPVoltageMin"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOVPVoltageMax"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOVPVoltageMax"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPVoltageMax"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOVPMode"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOVPMode"}, 
+     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPMode"}
+ 				]
 		}
-	]
+         ]
 }

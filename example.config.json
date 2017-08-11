@@ -1,6 +1,12 @@
 {
 	"groups": [
 		{
+			"name": "EXAMPLE",
+			"PVs": [
+				{"name": "CBM:MVD:EXAMPLE:DISCONECTED_EXAMPLE"}
+				]
+		},
+		{
 			"name": "Cooling",
 			"PVs": [
 				{"name": "CBM:MVD:COOLING:CC405:BathTemperatureMom"},
@@ -59,6 +65,16 @@
      			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOVPMode"}, 
      			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPMode"}
  				]
+		},
+		{
+                        "name": "Enviroment",
+                        "PVs": [
+				{"name": "CBM:MVD:ENVIRON:OPUS20_CLEANROOM:Temperature"},
+				{"name": "CBM:MVD:ENVIRON:OPUS20_CLEANROOM:Dewpoint"},
+                                {"name": "CBM:MVD:ENVIRON:OPUS20_CLEANROOM:AbsoluteHumidity"},
+				{"name": "CBM:MVD:ENVIRON:OPUS20_CLEANROOM:RelativeHumidity"},
+				{"name": "CBM:MVD:ENVIRON:OPUS20_CLEANROOM:BatteryVoltage"}
+				]
 		}
-         ]
+	]
 }

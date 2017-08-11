@@ -28,7 +28,8 @@ def update_values():
                 pv['value'] = p.get()
             if pv['value'] is None: pv['value'] = '- disconnected -'
             pv['unit'] = p.units or ''
-
+            if pv['value'] == 'OFF': pv['value'] = '- OFF -'
+            if pv['value'] == 'ON': pv['value'] = '- ON -'
 @route('/')
 @view('pv_overview.jinja2')
 def index():

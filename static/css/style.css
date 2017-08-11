@@ -5,19 +5,19 @@
   margin-right: auto;
 }
 .header .cbm {
+  padding-left: 5px;
   position: relative;
   bottom: -5px;
   float: left;
-  width: 93px; <!-- orignal 250px-->
-  height: 120px; <!-- orginal 324px-->
+  height: 120px;  /*orginal 324px*/
 }
 .header .ikf {
+  padding-right: 5px;
   position: relative;
   bottom: -5px;
   float: right;
-  width: 264px; <!-- orignal 720px-->
-  height: 120px; <!-- orginal 327px-->
-}
+  height: 120px; /*orginal 327px*/
+} 
 
 .header h1 {
   position: center;
@@ -37,32 +37,35 @@
 }
 
 .invalid_alarm:after {
-  content: "invalid";
+  content: "- invalid -";
   position: relative;
   float: right;
   color: #0091FF;
 }
 .invalid_alarm {
-  border-color: #0091FF;
+  border: 3px solid #0091FF;
 }
 
 .minor_alarm:after {
-  content: "MINOR";
+  content: "- MINOR -";
   position: relative;
   float: right;
   color: #FF6F00;
 }
 .minor_alarm {
-  border-color: #FF6F00;
-
+  border: 3px solid #FF6F00;
 }
 .major_alarm:after {
-  content: "MAJOR";
+  content: "- MAJOR -";
   position: relative;
   float: right;
   color: #FF0000;
 }
 .major_alarm {
-  border-color: #FF0000;
+  border: 3px solid #FF0000;
+}
+
+.disconnected {
+  border: 3px solid #EBFF00;
 }
 

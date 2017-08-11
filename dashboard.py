@@ -1,18 +1,19 @@
 #!/usr/bin/env python
 
-import json
+import json, threading
 import epics
 
 from bottle import route, run, static_file
 from bottle import jinja2_view as view
 
 CONFIG = None
+PVS = {}
 
 def update_values():
     global CONFIG
     for group in CONFIG['groups']:
         for pv in group['PVs']:
-            p = epics.PV(pv['name'])
+            p = PVS[pv['name']]
             p.get_ctrlvars()
             class_map = {
               epics.NO_ALARM :      "",
@@ -23,22 +24,25 @@ def update_values():
             }
             pv['classes'] = class_map[p.severity]
             if 'enum' in p.type:
-                pv['value'] = p.get(as_string=True)
+                pv['value'] = p.char_value
             else:
-                pv['value'] = p.get()
+                pv['value'] = p.value
             if pv['value'] is None: pv['value'] = '- disconnected -'
             pv['unit'] = p.units or ''
             if pv['value'] == 'OFF': pv['value'] = '- OFF -'
             if pv['value'] == 'ON': pv['value'] = '- ON -'
+
+def update_values_continuous():
+    while True:
+        update_values()
+
 @route('/')
 @view('pv_overview.jinja2')
 def index():
-    update_values()
     return CONFIG
 
 @route('/api/values.json')
 def index():
-    update_values()
     return CONFIG
 
 @route('/static/<path:path>')
@@ -46,7 +50,7 @@ def static_content(path):
     return static_file(path, root='./static/')
 
 def main():
-    global CONFIG
+    global CONFIG, PVS
 
     import argparse, sys
     parser = argparse.ArgumentParser()
@@ -67,6 +71,17 @@ def main():
             sys.stderr.write("Error loading --config file.\n")
             sys.stderr.write(str(e) + "\n")
             sys.exit(1)
+
+    for group in CONFIG['groups']:
+        for pv in group['PVs']:
+            PVS[pv['name']] = epics.PV(pv['name'], auto_monitor=True)
+            pv['value'] = 'Undefined'
+            pv['unit'] = ''
+            pv['classes'] = ''
+
+    uvt = threading.Thread(target=update_values_continuous)
+    uvt.daemon = True
+    uvt.start()
 
     run(host=args.host, port=args.port, debug=args.debug)
 

@@ -30,7 +30,20 @@
 						{% for PV in group.PVs %}
 						<tr>
 							<td>{{ PV.name }}</td>
-							<td class="{{ PV.classes }}">{{ PV.value }}</td>
+							<td class="{{ PV.classes }}">
+								{% if 'switch' in PV.classes %}
+									<label class="toggle">
+										<input type="checkbox" disabled readonly {{ 'checked' if 'ON' in PV.value else '' }}>
+										<span data-unchecked="OFF" data-checked="ON"></span>
+									</label>
+								{% else %}
+                                                                	{% if PV.precision is number %}
+										{{ PV.value|round(PV.precision) }}
+									{% else %}
+										{{ PV.value }}
+									{% endif %}
+								{% endif %}
+							</td>
 							<td>{{ PV.unit }}</td>
 						</tr>
 						{% endfor %}

@@ -39,6 +39,7 @@ def cb_connection_change(**kwargs):
             pv['value'] = '- disconnected -'
             pv['unit'] = ''
             pv['classes'] = 'disconnected'
+            pv['precision'] = None
 
 
 def cb_value_update(**kwargs):
@@ -64,11 +65,15 @@ def cb_value_update(**kwargs):
                      pv['value'] = kwargs['char_value']
             else:
                 pv['value'] = kwargs['value']
+            pv['precision'] = kwargs['precision']
+            #if type(kwargs['precision']) == int and ('double' in kwargs['type'] or 'float' in kwargs['type']):
+            #    pv['value'] = round(pv['value'], kwargs['precision'])
+            if kwargs['enum_strs'] == (b'OFF', b'ON'):
+                pv['classes'] += ' switch'
             if pv['value'] is None: pv['value'] = '- disconnected -'
             pv['unit'] = kwargs['units'] or ''
-            if pv['value'] == 'OFF': pv['value'] = '- OFF -'
-            if pv['value'] == 'ON': pv['value'] = '- ON -'
-
+            if pv['unit'] == 'deg C': pv['unit'] = '&degC'
+            if pv['unit'] == 'g/m3': pv['unit'] = 'g/m&sup3'
 @route('/')
 @view('pv_overview.jinja2')
 def index():
@@ -109,6 +114,7 @@ def main():
         for pv in group['PVs']:
             pv['value'] = '- disconnected (initial) -'
             pv['unit'] = ''
+            pv['precision'] = None
             pv['classes'] = 'disconnected'
             PVS[pv['name']] = epics.PV(pv['name'], auto_monitor=True, form='ctrl', callback=cb_value_update, connection_callback=cb_connection_change)
 

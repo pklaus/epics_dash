@@ -38,7 +38,7 @@
 									</label>
 								{% else %}
                                                                 	{% if PV.precision is number %}
-										{{ PV.value|round(PV.precision) }}
+										{{ ("%."+PV.precision|string +"f") % PV.value }}
 									{% else %}
 										{{ PV.value }}
 									{% endif %}

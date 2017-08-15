@@ -13,9 +13,11 @@
 			<h1>PRESTO - Overview<br/> Prototype of the Second Station of the Micro Vertex Detector of the Compressed Baryonic Matter</h1>
 		</div>
 		<div id="PVs">
-			{% for group in groups %}
-			<div id="{{ group.name }}">
-				<h2>{{ group.name }}</h2>
+			{% set page = config.pages[req_page] %}
+			{% for group in page.groups %}
+			{% set this_group = config.groups[group] %}
+			<div id="{{ this_group.name }}">
+				<h2>{{ this_group.name }}</h2>
 					 <table style="width:100%">
 						<colgroup>
 							<col span="1" style="width: 60%;">
@@ -27,7 +29,8 @@
 							<th>Value</th>
 							<th>Unit</th>
 						</tr>
-						{% for PV in group.PVs %}
+						{% for pv_name in this_group.PVs %}
+						{% set PV = config.PVs[config.PV_lookup[pv_name]] %}
 						<tr>
 							<td>{{ PV.name }}</td>
 							<td class="{{ PV.classes }}">

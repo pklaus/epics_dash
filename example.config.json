@@ -1,80 +1,215 @@
 {
-	"groups": [
-		{
-			"name": "EXAMPLE",
-			"PVs": [
-				{"name": "CBM:MVD:EXAMPLE:DISCONECTED_EXAMPLE"}
+	"PVs": [
+		{"name": "CBM:MVD:EXAMPLE:DISCONECTED_EXAMPLE"},
+
+		{"name": "CBM:MVD:COOLING:CC405:BathTemperatureMom", "alias": "Current Heat Bath Temperature", "descr": ""},
+		{"name": "CBM:MVD:COOLING:CC405:ExternalTemperatureMom"},
+		{"name": "CBM:MVD:COOLING:CC405:SetpointMom"},
+		{"name": "CBM:MVD:COOLING:CC405:FLOW:IN:Flow"},
+		{"name": "CBM:MVD:COOLING:CC405:FLOW:IN:Total"},
+		{"name": "CBM:MVD:COOLING:CC405:FLOW:OUT:Flow"},
+		{"name": "CBM:MVD:COOLING:CC405:FLOW:OUT:Total"},
+
+		{"name": "CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_A:IKR:Voltage"},
+		{"name": "CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_A:TPR2:Voltage"},
+		{"name": "CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_B:IKR:Voltage"},
+		{"name": "CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_B:TPR2:Voltage"},
+
+		{"name": "CBM:MVD:VACUUM:RECIPIENT:1:Pressure"},
+		{"name": "CBM:MVD:VACUUM:RECIPIENT:1:Status"},
+		{"name": "CBM:MVD:VACUUM:RECIPIENT:2:Pressure"},
+		{"name": "CBM:MVD:VACUUM:RECIPIENT:2:Status"},
+		{"name": "CBM:MVD:VACUUM:RECIPIENT:3:Pressure"},
+		{"name": "CBM:MVD:VACUUM:RECIPIENT:3:Status"},
+	
+		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:GetGeneralOutput"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOutput"},
+		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOutput"},
+		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOutput"},
+		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetVoltage"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetVoltage"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetVoltage"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetCurrent"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetCurrent"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetCurrent"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:MeasuredVoltage"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:MeasuredVoltage"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:MeasuredVoltage"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:MeasuredCurrent"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:MeasuredCurrent"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:MeasuredCurrent"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOVPVoltage"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOVPVoltage"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPVoltage"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOVPVoltageMin"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOVPVoltageMin"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPVoltageMin"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOVPVoltageMax"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOVPVoltageMax"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPVoltageMax"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOVPMode"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOVPMode"},
+ 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPMode"},
+ 	
+		{"name": "CBM:MVD:ENVIRON:OPUS20_CLEANROOM:Temperature"},
+		{"name": "CBM:MVD:ENVIRON:OPUS20_CLEANROOM:Dewpoint"},
+		{"name": "CBM:MVD:ENVIRON:OPUS20_CLEANROOM:AbsoluteHumidity"},
+		{"name": "CBM:MVD:ENVIRON:OPUS20_CLEANROOM:RelativeHumidity"},
+		{"name": "CBM:MVD:ENVIRON:OPUS20_CLEANROOM:BatteryVoltage"},
+
+		{"name": "CBM:MVD:COOLING:CC405:Verify"},
+		{"name": "CBM:MVD:COOLING:CC405:Firmware"},
+		{"name": "CBM:MVD:COOLING:CC405:V"},
+		{"name": "CBM:MVD:COOLING:CC405:HT"},
+		{"name": "CBM:MVD:COOLING:CC405:Heating"},
+		{"name": "CBM:MVD:COOLING:CC405:unknown1"},
+		{"name": "CBM:MVD:COOLING:CC405:unknown2"},
+		{"name": "CBM:MVD:COOLING:CC405:F"},
+		{"name": "CBM:MVD:COOLING:CC405:T0"},
+		{"name": "CBM:MVD:COOLING:CC405:TC"},
+		{"name": "CBM:MVD:COOLING:CC405:T1"},
+		{"name": "CBM:MVD:COOLING:CC405:TIntern"},
+		{"name": "CBM:MVD:COOLING:CC405:TProcess"},
+		{"name": "CBM:MVD:COOLING:CC405:TU"},
+		{"name": "CBM:MVD:COOLING:CC405:TX1"},
+		{"name": "CBM:MVD:COOLING:CC405:TX0"},
+		{"name": "CBM:MVD:COOLING:CC405:Pressure"},
+		{"name": "CBM:MVD:COOLING:CC405:PumpSpeed"},
+		{"name": "CBM:MVD:COOLING:CC405:I"},
+		{"name": "CBM:MVD:COOLING:CC405:AIF_IN"},
+		{"name": "CBM:MVD:COOLING:CC405:TemperatureControl"},
+		{"name": "CBM:MVD:COOLING:CC405:MinimumValue"},
+		{"name": "CBM:MVD:COOLING:CC405:MaximumValue"}
+	],
+	"pages": {
+			"general_overview": {
+				"name": "General System Overview",
+				"groups": [
+					"example",
+					"cooling",
+					"low_voltage",
+					"pressure",
+					"environment"
 				]
-		},
-		{
-			"name": "Cooling",
-			"PVs": [
-				{"name": "CBM:MVD:COOLING:CC405:BathTemperatureMom"},
-				{"name": "CBM:MVD:COOLING:CC405:ExternalTemperatureMom"},
-				{"name": "CBM:MVD:COOLING:CC405:SetpointMom"},
-				{"name": "CBM:MVD:COOLING:CC405:FLOW:IN:Flow"},
-				{"name": "CBM:MVD:COOLING:CC405:FLOW:IN:Total"},
-				{"name": "CBM:MVD:COOLING:CC405:FLOW:OUT:Flow"},
-				{"name": "CBM:MVD:COOLING:CC405:FLOW:OUT:Total"}
+			},
+			"cooling_system": {
+				"name": "Details Cooling System",
+				"groups": [
+					"cooling_extended"
 				]
+			}
 		},
-		{
-			"name": "Pressure",
-			"PVs": [
-				{"name": "CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_A:IKR:Voltage"},
-				{"name": "CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_A:TPR2:Voltage"},
-				{"name": "CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_B:IKR:Voltage"},
-				{"name": "CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_B:TPR2:Voltage"},
-				{"name": "CBM:MVD:VACUUM:RECIPIENT:1:Pressure"},
-				{"name": "CBM:MVD:VACUUM:RECIPIENT:1:Status"},
-				{"name": "CBM:MVD:VACUUM:RECIPIENT:2:Pressure"},
-				{"name": "CBM:MVD:VACUUM:RECIPIENT:2:Status"},
-				{"name": "CBM:MVD:VACUUM:RECIPIENT:3:Pressure"},
-				{"name": "CBM:MVD:VACUUM:RECIPIENT:3:Status"}
+	"groups": {
+			"example": {
+				"name": "EXAMPLE",
+				"PVs": [
+					"CBM:MVD:EXAMPLE:DISCONECTED_EXAMPLE"
 				]
-		},
-		{
-                        "name": "Low Voltage",
-                        "PVs": [
-			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:GetGeneralOutput"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOutput"},  
-			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOutput"},  
-			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOutput"},  
-				{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetVoltage"},
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetVoltage"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetVoltage"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetCurrent"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetCurrent"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetCurrent"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:MeasuredVoltage"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:MeasuredVoltage"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:MeasuredVoltage"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:MeasuredCurrent"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:MeasuredCurrent"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:MeasuredCurrent"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOVPVoltage"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOVPVoltage"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPVoltage"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOVPVoltageMin"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOVPVoltageMin"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPVoltageMin"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOVPVoltageMax"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOVPVoltageMax"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPVoltageMax"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOVPMode"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOVPMode"}, 
-     			        {"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPMode"}
- 				]
-		},
-		{
-                        "name": "Enviroment",
-                        "PVs": [
-				{"name": "CBM:MVD:ENVIRON:OPUS20_CLEANROOM:Temperature"},
-				{"name": "CBM:MVD:ENVIRON:OPUS20_CLEANROOM:Dewpoint"},
-                                {"name": "CBM:MVD:ENVIRON:OPUS20_CLEANROOM:AbsoluteHumidity"},
-				{"name": "CBM:MVD:ENVIRON:OPUS20_CLEANROOM:RelativeHumidity"},
-				{"name": "CBM:MVD:ENVIRON:OPUS20_CLEANROOM:BatteryVoltage"}
+			},
+			"cooling": {
+				"name": "Cooling",
+				"PVs": [
+					"CBM:MVD:COOLING:CC405:BathTemperatureMom",
+					"CBM:MVD:COOLING:CC405:ExternalTemperatureMom",
+					"CBM:MVD:COOLING:CC405:SetpointMom",
+					"CBM:MVD:COOLING:CC405:FLOW:IN:Flow",
+					"CBM:MVD:COOLING:CC405:FLOW:IN:Total",
+					"CBM:MVD:COOLING:CC405:FLOW:OUT:Flow",
+					"CBM:MVD:COOLING:CC405:FLOW:OUT:Total"
 				]
+			},
+			"cooling_extended": {
+				"name": "Cooling (extended)",
+				"PVs": [
+					"CBM:MVD:COOLING:CC405:BathTemperatureMom",
+					"CBM:MVD:COOLING:CC405:ExternalTemperatureMom",
+					"CBM:MVD:COOLING:CC405:SetpointMom",
+					"CBM:MVD:COOLING:CC405:Verify",
+					"CBM:MVD:COOLING:CC405:Firmware",
+					"CBM:MVD:COOLING:CC405:V",
+					"CBM:MVD:COOLING:CC405:HT",
+					"CBM:MVD:COOLING:CC405:Heating",
+					"CBM:MVD:COOLING:CC405:unknown1",
+					"CBM:MVD:COOLING:CC405:unknown2",
+					"CBM:MVD:COOLING:CC405:F",
+					"CBM:MVD:COOLING:CC405:T0",
+					"CBM:MVD:COOLING:CC405:TC",
+					"CBM:MVD:COOLING:CC405:T1",
+					"CBM:MVD:COOLING:CC405:TIntern",
+					"CBM:MVD:COOLING:CC405:TProcess",
+					"CBM:MVD:COOLING:CC405:TU",
+					"CBM:MVD:COOLING:CC405:TX1",
+					"CBM:MVD:COOLING:CC405:TX0",
+					"CBM:MVD:COOLING:CC405:Pressure",
+					"CBM:MVD:COOLING:CC405:PumpSpeed",
+					"CBM:MVD:COOLING:CC405:I",
+					"CBM:MVD:COOLING:CC405:AIF_IN",
+					"CBM:MVD:COOLING:CC405:TemperatureControl",
+					"CBM:MVD:COOLING:CC405:MinimumValue",
+					"CBM:MVD:COOLING:CC405:MaximumValue",
+					"CBM:MVD:COOLING:CC405:FLOW:IN:Flow",
+					"CBM:MVD:COOLING:CC405:FLOW:IN:Total",
+					"CBM:MVD:COOLING:CC405:FLOW:OUT:Flow",
+					"CBM:MVD:COOLING:CC405:FLOW:OUT:Total"
+				]
+			},
+			"pressure": {
+				"name": "Pressure",
+				"PVs": [
+					"CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_A:IKR:Voltage",
+					"CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_A:TPR2:Voltage",
+					"CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_B:IKR:Voltage",
+					"CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_B:TPR2:Voltage",
+					"CBM:MVD:VACUUM:RECIPIENT:1:Pressure",
+					"CBM:MVD:VACUUM:RECIPIENT:1:Status",
+					"CBM:MVD:VACUUM:RECIPIENT:2:Pressure",
+					"CBM:MVD:VACUUM:RECIPIENT:2:Status",
+					"CBM:MVD:VACUUM:RECIPIENT:3:Pressure",
+					"CBM:MVD:VACUUM:RECIPIENT:3:Status"
+				]
+			},
+			"low_voltage": {
+				"name": "Low Voltage",
+				"PVs": [
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:GetGeneralOutput",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOutput",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOutput",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOutput",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetVoltage",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetVoltage",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetVoltage",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetCurrent",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetCurrent",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetCurrent",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:MeasuredVoltage",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:MeasuredVoltage",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:MeasuredVoltage",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:MeasuredCurrent",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:MeasuredCurrent",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:MeasuredCurrent",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOVPVoltage",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOVPVoltage",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPVoltage",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOVPVoltageMin",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOVPVoltageMin",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPVoltageMin",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOVPVoltageMax",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOVPVoltageMax",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPVoltageMax",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOVPMode",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOVPMode",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPMode"
+				]
+			},
+			"environment": {
+				"name": "Enviroment",
+				"PVs": [
+					"CBM:MVD:ENVIRON:OPUS20_CLEANROOM:Temperature",
+					"CBM:MVD:ENVIRON:OPUS20_CLEANROOM:Dewpoint",
+					"CBM:MVD:ENVIRON:OPUS20_CLEANROOM:AbsoluteHumidity",
+					"CBM:MVD:ENVIRON:OPUS20_CLEANROOM:RelativeHumidity",
+					"CBM:MVD:ENVIRON:OPUS20_CLEANROOM:BatteryVoltage"
+				]
+			}
 		}
-	]
 }

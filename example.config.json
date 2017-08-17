@@ -78,7 +78,25 @@
 		{"name": "CBM:MVD:ENVIRON:OPUS20_CLEANROOM:Dewpoint"},
 		{"name": "CBM:MVD:ENVIRON:OPUS20_CLEANROOM:AbsoluteHumidity"},
 		{"name": "CBM:MVD:ENVIRON:OPUS20_CLEANROOM:RelativeHumidity"},
-		{"name": "CBM:MVD:ENVIRON:OPUS20_CLEANROOM:BatteryVoltage"}
+		{"name": "CBM:MVD:ENVIRON:OPUS20_CLEANROOM:BatteryVoltage"},
+
+		{"name": "CBM:MVD:PT100:VAC:00"},
+		{"name": "CBM:MVD:PT100:VAC:01"},
+		{"name": "CBM:MVD:PT100:VAC:02"},
+		{"name": "CBM:MVD:PT100:VAC:03"},
+		{"name": "CBM:MVD:PT100:VAC:04"},
+		{"name": "CBM:MVD:PT100:VAC:05"},
+		{"name": "CBM:MVD:PT100:VAC:06"},
+		{"name": "CBM:MVD:PT100:VAC:07"},
+		{"name": "CBM:MVD:PT100:VAC:10"},
+		{"name": "CBM:MVD:PT100:VAC:11"},
+		{"name": "CBM:MVD:PT100:VAC:12"},
+		{"name": "CBM:MVD:PT100:VAC:13"},
+		{"name": "CBM:MVD:PT100:VAC:14"},
+		{"name": "CBM:MVD:PT100:VAC:15"},
+		{"name": "CBM:MVD:PT100:VAC:16"},
+		{"name": "CBM:MVD:PT100:VAC:17"},
+		{"name": "CBM:MVD:PT100:VAC:CONV_RATE"}
 	],
 	"pages": {
 			"general_overview": {
@@ -88,7 +106,8 @@
 					"cooling",
 					"low_voltage",
 					"pressure",
-					"environment"
+					"environment",
+					"temperature"
 				]
 			},
 			"cooling_system": {
@@ -198,6 +217,27 @@
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOVPMode",
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOVPMode",
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPMode"
+				]
+			},
+			"temperature": {
+				"name": "Temperature",
+				"PVs": [
+					"CBM:MVD:PT100:VAC:00",
+					"CBM:MVD:PT100:VAC:01",
+					"CBM:MVD:PT100:VAC:02",
+					"CBM:MVD:PT100:VAC:03",
+					"CBM:MVD:PT100:VAC:04",
+					"CBM:MVD:PT100:VAC:05",
+					"CBM:MVD:PT100:VAC:06",
+					"CBM:MVD:PT100:VAC:07",
+					"CBM:MVD:PT100:VAC:10",
+					"CBM:MVD:PT100:VAC:11",
+					"CBM:MVD:PT100:VAC:12",
+					"CBM:MVD:PT100:VAC:13",
+					"CBM:MVD:PT100:VAC:14",
+					"CBM:MVD:PT100:VAC:15",
+					"CBM:MVD:PT100:VAC:16",
+					"CBM:MVD:PT100:VAC:17"
 				]
 			},
 			"environment": {

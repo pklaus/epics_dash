@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>{% block title %}OVERVIEW{% endblock %} - PRESTO</title>
+		<meta http-equiv="refresh" content="5">
+		<link rel="stylesheet" href="/static/css/style.css">
+	</head>
+
+	<body>
+	<div id="container">
+		<div class="header">
+			<a href="http://www.uni-frankfurt.de/45043072/IKF?legacy_request=1"><img src="/static/images/ikf_logo.png" alt="logo" class="ikf"/></a>
+			<a href="http://www.fair-center.eu/for-users/experiments/cbm-and-hades/cbm.html"><img src="/static/images/cbm_logo.png" alt="logo" class="cbm"/></a>
+			<h1>PRESTO - Overview<br/> Prototype of the Second Station of the Micro Vertex Detector of the Compressed Baryonic Matter</h1>
+		</div>
+		<nav class="menu_bar">
+			{% for page in config.pages %}
+			<a class="{{ 'active' if page == req_page else '' }}" href="/list/{{ page }}">{{ config.pages[page].name }}</a>
+			{% endfor %}
+		</nav>
+		<div id="content">
+                	{% block content %}{% endblock %}
+		</div>
+<hr/>
+		<div id="footnote">
+			Copyright &copy;<a href="mailto:ole.artz@stud.uni-frankfurt.de">Ole Artz</a>, Philipp Klaus,
+			<a href="https://www.uni-frankfurt.de/51839311/Working-Group-People">IKF-Working Group Prof. Dr. Stroth</a>
+		</div>
+	</div>	
+	<script type="text/javascript" src="/static/js/script.js"></script>
+		</body>
+
+</html>
+

@@ -36,6 +36,32 @@ table, th {
   text-align: left;
 }
 
+/* MENU_BAR*/
+.menu_bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #0509fc;
+}
+
+.menu_bar a {
+    color: white;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menu_bar a:hover:not {
+    background-color: #111;
+}
+
+.menu_bar {
+    cursor: pointer;
+}
+.active {
+    background-color:#4CAF50;
+}
 /* ALARMS */
 .invalid_alarm:after {
   content: "- invalid -";

@@ -12,6 +12,11 @@
 			<a href="http://www.fair-center.eu/for-users/experiments/cbm-and-hades/cbm.html"><img src="/static/images/cbm_logo.png" alt="logo" class="cbm"/></a>
 			<h1>PRESTO - Overview<br/> Prototype of the Second Station of the Micro Vertex Detector of the Compressed Baryonic Matter</h1>
 		</div>
+		<nav class="menu_bar">
+			{% for page in config.pages %}
+			<a class="{{ 'active' if page == req_page else '' }}" href="/list/{{ page }}">{{ config.pages[page].name }}</a>
+			{% endfor %}
+		</nav>
 		<div id="PVs">
 			{% set page = config.pages[req_page] %}
 			{% for group in page.groups %}

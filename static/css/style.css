@@ -102,6 +102,7 @@ table, th {
   display: inline-block;
   width: 8em;
   padding: 0.125em;
+  border: solid 2px #5E5E5E;
 }
 .toggle input {
   position: absolute;

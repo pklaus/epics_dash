@@ -36,7 +36,7 @@
 						</tr>
 						{% for pv_name in this_group.PVs %}
 						{% set PV = config.PVs[config.PV_lookup[pv_name]] %}
-						<tr>
+						<tr style="cursor: pointer;" title="{{ PV.alias }}">
 							<td>{{ PV.name }}</td>
 							<td class="{{ PV.classes }}">
 								{% if 'switch' in PV.classes %}

@@ -8,6 +8,26 @@ from bottle import jinja2_view as view
 
 CONFIG = None
 PVS = {}
+HISTORY = {}
+GC_LAST_RUN = time.time()
+
+def history_garbage_collection():
+    global HISTORY, GC_LAST_RUN
+    if GC_LAST_RUN > (time.time() - 5):
+        return
+    GC_LAST_RUN = time.time()
+    for pv_name in HISTORY:
+        try:
+            while HISTORY[pv_name][0][0] < (time.time()-30*60):
+                del HISTORY[pv_name][0]
+        except IndexError:
+            pass
+
+def register_pv_value_in_history(pv_name, ts, value):
+    global HISTORY
+    if pv_name not in HISTORY:
+        HISTORY[pv_name] = []
+    HISTORY[pv_name].append( (ts, value) )
 
 def cb_connection_change(**kwargs):
     global CONFIG
@@ -45,6 +65,8 @@ def cb_value_update(**kwargs):
     for pv in CONFIG['PVs']:
         if pv['name'] != kwargs['pvname']: continue
 
+        register_pv_value_in_history(kwargs['pvname'], kwargs['timestamp'], kwargs['value'])
+        history_garbage_collection()
         class_map = {
           epics.NO_ALARM :      "",
           epics.MINOR_ALARM :   "minor_alarm",

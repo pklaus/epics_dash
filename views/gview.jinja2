@@ -1,0 +1,64 @@
+{% extends "base.jinja2" %}
+
+{% block title %}GView  {{ svg }}{% endblock %}
+
+{% block content %}
+	<div class="gview">
+		<object id="gview" style="margin: 2ex auto; display: block;" class="gview gview-{{ svg }}" data="/static/gview/{{ svg }}.svg" type="image/svg+xml">
+		Your browser doesn't support SVG
+		</object>
+	</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"> </script>
+<script>
+
+var update_every_ms = 2050;
+
+function updateStatus() {
+  $.getJSON("/api/values.json", function( data ) {
+    var gview = document.getElementById("gview");
+    var svgDoc = gview.contentDocument;
+    // ----------
+    var svgItems = svgDoc.getElementsByClassName("dynamic");
+    [].forEach.call(svgItems, function (el) {
+      var el_id = el.id;
+      var pvName  = el_id.substring(0, el_id.lastIndexOf("_"));
+      var pvField = el_id.substring(el_id.lastIndexOf("_") + 1, el_id.length);
+      var pvName = pvName.replace(/-/g, ':');
+      var pv = data.PVs[data.PV_lookup[pvName]];
+      if (pvField == "VAL")
+        el.textContent = pv.value.toFixed(pv.precision);
+      else if (pvField == "EGU")
+        el.textContent = pv.unit
+    });
+    // ----------
+    /*
+    var svgItem = svgDoc.getElementById("CBM-MVD-COOLING-CC405-FLOW-IN-Flow_VAL");
+    svgItem.textContent = pv.value.toFixed(pv.precision);
+    // ----------
+    var pv = data.PVs[data.PV_lookup["CBM:MVD:COOLING:CC405:BathTemperatureMom"]];
+    var svgItem = svgDoc.getElementById("CBM-MVD-COOLING-CC405-BathTemperatureMom_VAL");
+    svgItem.textContent = pv.value.toFixed(pv.precision);
+    */
+  });
+};
+
+function timedUpdate() {
+  updateStatus();
+  setTimeout(function() {
+    timedUpdate();
+  }, update_every_ms);
+};
+
+$(function() {
+  // on page load
+  updateStatus();
+  setTimeout(function() {
+    timedUpdate();
+  }, update_every_ms);
+});
+
+</script>
+
+
+{% endblock %}

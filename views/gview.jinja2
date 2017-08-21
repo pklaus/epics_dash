@@ -8,10 +8,10 @@
 		Your browser doesn't support SVG
 		</object>
 	</div>
+{% endblock %}
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"> </script>
-<script>
 
+{% block js_end_of_page %}
 var update_every_ms = 2050;
 
 function updateStatus() {
@@ -31,15 +31,6 @@ function updateStatus() {
       else if (pvField == "EGU")
         el.textContent = pv.unit
     });
-    // ----------
-    /*
-    var svgItem = svgDoc.getElementById("CBM-MVD-COOLING-CC405-FLOW-IN-Flow_VAL");
-    svgItem.textContent = pv.value.toFixed(pv.precision);
-    // ----------
-    var pv = data.PVs[data.PV_lookup["CBM:MVD:COOLING:CC405:BathTemperatureMom"]];
-    var svgItem = svgDoc.getElementById("CBM-MVD-COOLING-CC405-BathTemperatureMom_VAL");
-    svgItem.textContent = pv.value.toFixed(pv.precision);
-    */
   });
 };
 
@@ -57,8 +48,4 @@ $(function() {
     timedUpdate();
   }, update_every_ms);
 });
-
-</script>
-
-
 {% endblock %}

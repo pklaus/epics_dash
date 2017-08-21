@@ -1,8 +1,9 @@
 <html>
 	<head>
 		<title>{% block title %}OVERVIEW{% endblock %} - PRESTO</title>
-		<meta http-equiv="refresh" content="5">
 		<link rel="stylesheet" href="/static/css/style.css">
+		{% block header %}
+		{% endblock %}
 	</head>
 
 	<body>
@@ -27,7 +28,12 @@
 		</div>
 	</div>	
 	<script type="text/javascript" src="/static/js/script.js"></script>
-		</body>
+
+	<script type="text/javascript">
+		{% block js_end_of_page %}
+		{% endblock %}
+	</script>
+	</body>
 
 </html>
 

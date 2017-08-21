@@ -2,6 +2,10 @@
 
 {% block title %}{{ config.pages[req_page].name }}{% endblock %}
 
+{% block header %}
+<meta http-equiv="refresh" content="5">
+{% endblock %}
+
 {% block content %}
 		<div id="PVs">
 			{% set page = config.pages[req_page] %}

@@ -105,6 +105,11 @@ def list_pvs(page):
         return abort(404, 'Page not found')
     return {'config': CONFIG, 'req_page': page}
 
+@route('/gview/<name>')
+@view('gview.jinja2')
+def gview(name):
+    return {'config': CONFIG, 'svg': name}
+
 @route('/api/values.json')
 def index():
     return CONFIG

@@ -115,8 +115,15 @@
 				"groups": [
 					"cooling_extended"
 				]
-			}
-		},
+                        },
+                        "low_voltage_system": {
+                                "name": "Details Low Voltage",
+                                "groups": [
+                                        "low_voltage_extended"
+                                ]
+                        }
+                },
+
 	"groups": {
 			"example": {
 				"name": "EXAMPLE",
@@ -171,23 +178,23 @@
 					"CBM:MVD:COOLING:CC405:FLOW:OUT:Total"
 				]
 			},
-			"pressure": {
-				"name": "Pressure",
-				"PVs": [
-					"CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_A:IKR:Voltage",
-					"CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_A:TPR2:Voltage",
-					"CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_B:IKR:Voltage",
-					"CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_B:TPR2:Voltage",
-					"CBM:MVD:VACUUM:RECIPIENT:1:Pressure",
-					"CBM:MVD:VACUUM:RECIPIENT:1:Status",
-					"CBM:MVD:VACUUM:RECIPIENT:2:Pressure",
-					"CBM:MVD:VACUUM:RECIPIENT:2:Status",
-					"CBM:MVD:VACUUM:RECIPIENT:3:Pressure",
-					"CBM:MVD:VACUUM:RECIPIENT:3:Status"
-				]
-			},
 			"low_voltage": {
 				"name": "Low Voltage",
+				"PVs": [
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:GetGeneralOutput",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOutput",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOutput",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOutput",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetVoltage",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetVoltage",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetVoltage",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetCurrent",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetCurrent",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetCurrent"
+				]
+			},
+			"low_voltage_extended": {
+				"name": "Low Voltage (extended)",
 				"PVs": [
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:GetGeneralOutput",
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOutput",
@@ -217,6 +224,21 @@
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOVPMode",
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOVPMode",
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPMode"
+				]
+			},
+			"pressure": {
+				"name": "Pressure",
+				"PVs": [
+					"CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_A:IKR:Voltage",
+					"CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_A:TPR2:Voltage",
+					"CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_B:IKR:Voltage",
+					"CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_B:TPR2:Voltage",
+					"CBM:MVD:VACUUM:RECIPIENT:1:Pressure",
+					"CBM:MVD:VACUUM:RECIPIENT:1:Status",
+					"CBM:MVD:VACUUM:RECIPIENT:2:Pressure",
+					"CBM:MVD:VACUUM:RECIPIENT:2:Status",
+					"CBM:MVD:VACUUM:RECIPIENT:3:Pressure",
+					"CBM:MVD:VACUUM:RECIPIENT:3:Status"
 				]
 			},
 			"temperature": {

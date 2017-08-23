@@ -114,6 +114,10 @@ def gview(name):
 def index():
     return CONFIG
 
+@route('/api/history/<name>.json')
+def api_history(name):
+    return {'history': HISTORY[name]}
+
 @route('/static/<path:path>')
 def static_content(path):
     return static_file(path, root='./static/')

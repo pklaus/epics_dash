@@ -77,6 +77,7 @@ function sparkline() {
 
     // Define the line
     var valueline = d3.svg.line()
+      .defined(function (d) { return d[1] !== null; })
       .x(function (d) { return x(d[0]); })
       .y(function (d) { return y(d[1]); });
 

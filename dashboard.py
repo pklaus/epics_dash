@@ -102,8 +102,8 @@ def cb_value_update(**kwargs):
             pv['classes'] += ' switch'
         if pv['value'] is None: pv['value'] = '- disconnected -'
         pv['unit'] = kwargs['units'] or ''
-        if pv['unit'] == 'deg C': pv['unit'] = '&degC'
-        if pv['unit'] == 'g/m3': pv['unit'] = 'g/m&sup3'
+        if pv['unit'] == 'deg C': pv['unit'] = '°C'
+        if pv['unit'] == 'g/m3': pv['unit'] = 'g/m³'
 
 @route('/')
 def index():

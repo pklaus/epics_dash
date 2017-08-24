@@ -111,7 +111,7 @@ def gview(name):
     return {'config': CONFIG, 'svg': name}
 
 @route('/api/values.json')
-def index():
+def api_values():
     return CONFIG
 
 @route('/api/history/<name>.json')

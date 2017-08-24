@@ -108,11 +108,7 @@ function sparkline() {
       })
     }
 
-    if (chart.dataSourceType().toLowerCase() === 'csv') {
-      d3.csv(chart.dataSource(), drawChart);
-    } else if (chart.dataSourceType().toLowerCase() === 'tsv') {
-      d3.tsv(chart.dataSource(), drawChart);
-    } else {
+    if (chart.dataSourceType().toLowerCase() === 'json') {
       d3.json(chart.dataSource(), function(error, json) {
         if (error) return drawChart(error, json);
         chart.precision(json.precision);

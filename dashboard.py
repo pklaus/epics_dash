@@ -136,7 +136,9 @@ def api_history(name):
         history.append([time.time(), history[-1][1]])
     for row in history:
         row[0] *= 1000.
-    return {'history': history}
+    pv_index = CONFIG['PV_lookup'][name]
+    precision = CONFIG['PVs'][pv_index]['precision']
+    return {'history': history, 'precision': precision}
 
 @route('/static/<path:path>')
 def static_content(path):

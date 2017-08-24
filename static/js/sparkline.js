@@ -10,6 +10,7 @@ function sparkline() {
   // defaults
   var width = 200;
   var height = 40;
+  var precision = null;
   var dataSource = '';
   var dataSourceType = '';
   var selector = 'body';
@@ -25,6 +26,12 @@ function sparkline() {
   chart.height = function(value) {
     if (!arguments.length) return height;
     height = value;
+    return chart;
+  };
+
+  chart.precision = function(value) {
+    if (!arguments.length) return precision;
+    precision = value;
     return chart;
   };
 
@@ -108,6 +115,7 @@ function sparkline() {
     } else {
       d3.json(chart.dataSource(), function(error, json) {
         if (error) return drawChart(error, json);
+        chart.precision(json.precision);
         drawChart(error, json.history);
       });
     }
@@ -184,7 +192,10 @@ function sparkline() {
         //console.log(x(d[0]));
         //console.log(y(d[1]));
         focus.attr("transform", "translate(" + x(d[0]) + "," + y(d[1]) + ")");
-        tooltip_val.text(d[1]);
+        var val = d[1];
+        if (precision != null)
+          val = val.toFixed(precision);
+        tooltip_val.text(val);
         var iso_date = d[0].toISOString();
         tooltip_ts.text(iso_date.slice(11, 11+10));
       }

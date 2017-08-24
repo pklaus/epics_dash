@@ -72,7 +72,7 @@ function sparkline() {
     var svg = d3.select(chart.selector())
       .append('svg')
         .attr('width', width + margin.left + margin.right)
-        .attr('height', height)
+        .attr('height', height + margin.top + margin.bottom)
       .append('g')
         .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
@@ -119,7 +119,8 @@ function sparkline() {
 
       // Scale the range of the data
       x.domain(d3.extent(data, function (d) { return d[0]; }));
-      y.domain([0, d3.max(data, function (d) { return d[1]; })]);
+      y.domain(d3.extent(data, function (d) { return d[1]; }));
+
 
       // Add the valueline path.
       svg.append('path')

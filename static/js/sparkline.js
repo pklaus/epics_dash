@@ -90,6 +90,7 @@ function sparkline() {
           .attr("y1", "0%")   // starting y point
           .attr("x2", "0%")   // ending x point
           .attr("y2", "100%") // ending y point
+          .attr("gradientUnits", "userSpaceOnUse")
           .attr("spreadMethod", "pad");
 
       chart.gradientColors().forEach(function (color, index) {
@@ -124,7 +125,9 @@ function sparkline() {
 
       // Scale the range of the data
       x.domain(d3.extent(data, function (d) { return d[0]; }));
-      y.domain(d3.extent(data, function (d) { return d[1]; }));
+      var extent = d3.extent(data, function (d) { return d[1]; });
+      if (extent[0] == extent[1]) extent = [ extent[0]-.5, extent[0]+.5];
+      y.domain(extent);
 
 
       // Add the valueline path.

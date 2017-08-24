@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import json, threading, time
+import json, threading, time, copy
 import epics
 
 from bottle import route, run, static_file, redirect, abort
@@ -10,6 +10,7 @@ CONFIG = None
 PVS = {}
 HISTORY = {}
 GC_LAST_RUN = time.time()
+HISTORY_LENGTH=30*60
 
 def history_garbage_collection():
     global HISTORY, GC_LAST_RUN
@@ -17,17 +18,18 @@ def history_garbage_collection():
         return
     GC_LAST_RUN = time.time()
     for pv_name in HISTORY:
-        try:
-            while HISTORY[pv_name][0][0] < (time.time()-30*60):
-                del HISTORY[pv_name][0]
-        except IndexError:
-            pass
+        # delete entries older than HISTORY_LENGTH (but leave at least one entry in the list)
+        while (len(HISTORY[pv_name]) > 1) and (HISTORY[pv_name][0][0] < (time.time()-HISTORY_LENGTH)):
+            del HISTORY[pv_name][0]
+        # if only one (outdated) entry left, update its time to now - HISTORY_LENGTH
+        if (len(HISTORY[pv_name]) == 1) and (HISTORY[pv_name][0][0] < (time.time()-HISTORY_LENGTH)):
+            HISTORY[pv_name][0][0] = time.time()-HISTORY_LENGTH
 
 def register_pv_value_in_history(pv_name, ts, value):
     global HISTORY
     if pv_name not in HISTORY:
         HISTORY[pv_name] = []
-    HISTORY[pv_name].append( (ts, value) )
+    HISTORY[pv_name].append( [ts, value] )
 
 def cb_connection_change(**kwargs):
     global CONFIG
@@ -84,6 +86,7 @@ def cb_value_update(**kwargs):
                  pv['value'] = kwargs['char_value']
         else:
             pv['value'] = kwargs['value']
+        pv['num_value'] = kwargs['value']
         pv['precision'] = kwargs['precision']
         #if type(kwargs['precision']) == int and ('double' in kwargs['type'] or 'float' in kwargs['type']):
         #    pv['value'] = round(pv['value'], kwargs['precision'])
@@ -116,7 +119,10 @@ def api_values():
 
 @route('/api/history/<name>.json')
 def api_history(name):
-    return {'history': HISTORY[name]}
+    history = copy.copy(HISTORY[name])
+    # repeat latest value in history (to make plot lines end 'now')
+    history.append([time.time(), history[-1][1]])
+    return {'history': history}
 
 @route('/static/<path:path>')
 def static_content(path):

@@ -28,12 +28,45 @@
   text-align: center;
 }
 
-table, th, td {
+table {
+  /* border-collapse: collapse; */
+  border-spacing: 0px;
+}
+
+th, td {
   border: 1px solid black;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  padding: 4px;
+}
+th {
+  border-bottom: 1.5px solid black;
+  border-top-width: 0;
 }
 
 table, th {
   text-align: left;
+}
+
+td.value, th.value_header {
+  text-align: center;
+}
+
+td.value span.value {
+  float: left;
+  width: 70%;
+  text-align: right;
+}
+td.value span.unit {
+  float: right;
+  width: 28%;
+  text-align: left;
+  padding-left: .1em;
+}
+
+div.error {
+  text-align: center;
 }
 
 /* MENU_BAR*/
@@ -62,38 +95,49 @@ table, th {
 .active {
   background-color:#4CAF50;
 }
+
 /* ALARMS */
-.invalid_alarm:after {
+.invalid_alarm .indicator,
+.minor_alarm .indicator,
+.major_alarm .indicator,
+.disconnected .indicator {
+  border: 4px solid;
+}
+
+/* invalid */
+.invalid_alarm .error:before {
   content: "- invalid -";
-  position: relative;
-  float: right;
   color: #0091FF;
 }
-.invalid_alarm {
-  border: 3px solid #0091FF;
+.invalid_alarm .indicator {
+  border-color: #0091FF;
 }
 
-.minor_alarm:after {
+/* minor */
+.minor_alarm .error:before {
   content: "- MINOR -";
-  position: relative;
-  float: right;
   color: #FF6F00;
 }
-.minor_alarm {
-  border: 3px solid #FF6F00;
-}
-.major_alarm:after {
-  content: "- MAJOR -";
-  position: relative;
-  float: right;
-  color: #FF0000;
-}
-.major_alarm {
-  border: 3px solid #FF0000;
+.minor_alarm .indicator {
+  border-color: #FF6F00;
 }
 
-.disconnected {
-  border: 3px solid #EBFF00;
+/* major */
+.major_alarm .error:before {
+  content: "- MAJOR -";
+  color: #FF0000;
+}
+.major_alarm .indicator {
+  border-color: #FF0000;
+}
+
+/* disconnected */
+.disconnected .error:before {
+  content: "- disconnected -";
+  color: #FF0000;
+}
+.disconnected .indicator {
+  border-color: #EBFF00;
 }
 
 /* TOGGLE ON/OFF */

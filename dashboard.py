@@ -32,7 +32,7 @@ def register_pv_value_in_history(pv_name, ts, value):
     # If we are asked to put a float:NaN value into the history,
     # repeat the previous value just before our new NaN value
     # This is important to extend plot lines until the value gets invalid.
-    if len(HISTORY[pv_name]) > 0 and math.isnan(value):
+    if len(HISTORY[pv_name]) > 0 and value is None:
         HISTORY[pv_name].append( [ts-0.1, HISTORY[pv_name][1]] )
     HISTORY[pv_name].append( [ts, value] )
 
@@ -65,7 +65,7 @@ def cb_connection_change(**kwargs):
         pv['unit'] = ''
         pv['classes'] = 'disconnected'
         pv['precision'] = None
-        register_pv_value_in_history(kwargs['pvname'], time.time(), float('nan'))
+        register_pv_value_in_history(kwargs['pvname'], time.time(), None)
 
 
 def cb_value_update(**kwargs):
@@ -93,7 +93,7 @@ def cb_value_update(**kwargs):
             pv['value'] = kwargs['value']
         pv['num_value'] = kwargs['value']
         if kwargs['severity'] == epics.INVALID_ALARM:
-            pv['num_value'] = float('nan')
+            pv['num_value'] = None
         register_pv_value_in_history(kwargs['pvname'], kwargs['timestamp'], pv['num_value'])
         pv['precision'] = kwargs['precision']
         #if type(kwargs['precision']) == int and ('double' in kwargs['type'] or 'float' in kwargs['type']):

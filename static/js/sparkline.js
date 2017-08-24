@@ -128,7 +128,7 @@ function sparkline() {
 
       data.forEach(function (d) {
         d[0] = new Date(d[0]);
-        d[1] = +d[1];
+        d[1] = d[1];
       });
 
       // Scale the range of the data

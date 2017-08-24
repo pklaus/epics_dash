@@ -128,12 +128,14 @@ def api_values():
 @route('/api/history/<name>.json')
 def api_history(name):
     try:
-        history = copy.copy(HISTORY[name])
+        history = copy.deepcopy(HISTORY[name])
     except KeyError:
         abort(404, "PV not found")
     if len(history) != 0:
         # repeat latest value in history (to make plot lines end 'now')
         history.append([time.time(), history[-1][1]])
+    for row in history:
+        row[0] *= 1000.
     return {'history': history}
 
 @route('/static/<path:path>')

@@ -2,6 +2,10 @@
 
 // Built to closely follow reusable charts best practices doc: http://bost.ocks.org/mike/chart/
 
+var parseDate = d3.time.format("%d-%b-%y").parse,
+    bisectDate = d3.bisector(function(d) { return d[0]; }).left,
+    formatValue = d3.format(",.3f");
+
 function sparkline() {
   // defaults
   var width = 200;
@@ -48,6 +52,7 @@ function sparkline() {
     return chart;
   };
 
+  // chart setup
   function chart() {
     var margin = {
       top: 5,
@@ -133,6 +138,42 @@ function sparkline() {
         })
         .attr('d', valueline(data));
 
+      var tooltip =   svg.append("text")
+            .attr("x", 9)
+            //.attr("dy", ".35em");
+            .attr("y", height/2)
+            //.style("z-index", "10")
+            .text("");
+            //.text("- value -");
+            
+      var focus = svg.append("g")
+          .attr("class", "focus")
+          .style("display", "none");
+
+      focus.append("circle")
+          .attr("r", 4.5);
+
+      svg.append("rect")
+          .attr("class", "overlay")
+          .attr("width", width)
+          .attr("height", height)
+          .on("mouseover", function() { focus.style("display", null); })
+          .on("mouseout", function() { focus.style("display", "none"); tooltip.text("");})
+          .on("mousemove", mousemove);
+
+      function mousemove() {
+        var x0 = x.invert(d3.mouse(this)[0]),
+            i = bisectDate(data, x0, 1),
+            d0 = data[i - 1],
+            d1 = data[i];
+        //console.log(d3.mouse(this)[0]);
+        //console.log(d3.mouse(this)[1]);
+        var d = x0 - d0[0] > d1[0] - x0 ? d1 : d0;
+        //console.log(x(d[0]));
+        //console.log(y(d[1]));
+        focus.attr("transform", "translate(" + x(d[0]) + "," + y(d[1]) + ")");
+        tooltip.text(d[1]);
+      }
     }
   }
 

@@ -141,13 +141,18 @@ function sparkline() {
         })
         .attr('d', valueline(data));
 
-      var tooltip =   svg.append("text")
+      var tooltip_val =   svg.append("text")
             .attr("x", 9)
             //.attr("dy", ".35em");
-            .attr("y", height/2)
+            .attr("y", height*1/3)
             //.style("z-index", "10")
             .text("");
             //.text("- value -");
+
+      var tooltip_ts =   svg.append("text")
+            .attr("x", 9)
+            .attr("y", height*2/3)
+            .text("");
             
       var focus = svg.append("g")
           .attr("class", "focus")
@@ -161,7 +166,11 @@ function sparkline() {
           .attr("width", width)
           .attr("height", height)
           .on("mouseover", function() { focus.style("display", null); })
-          .on("mouseout", function() { focus.style("display", "none"); tooltip.text("");})
+          .on("mouseout", function() {
+            focus.style("display", "none");
+            tooltip_val.text("");
+            tooltip_ts.text("");
+          })
           .on("mousemove", mousemove);
 
       function mousemove() {
@@ -175,7 +184,9 @@ function sparkline() {
         //console.log(x(d[0]));
         //console.log(y(d[1]));
         focus.attr("transform", "translate(" + x(d[0]) + "," + y(d[1]) + ")");
-        tooltip.text(d[1]);
+        tooltip_val.text(d[1]);
+        var iso_date = d[0].toISOString();
+        tooltip_ts.text(iso_date.slice(11, 11+10));
       }
     }
   }

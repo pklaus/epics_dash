@@ -2,6 +2,10 @@
 
 {% block title %}GView  {{ svg }}{% endblock %}
 
+{% block header %}
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"> </script>
+{% endblock %}
+
 {% block content %}
 	<div class="gview">
 		<object id="gview" style="margin: 2ex auto; display: block;" class="gview gview-{{ svg }}" data="/static/gview/{{ svg }}.svg" type="image/svg+xml">

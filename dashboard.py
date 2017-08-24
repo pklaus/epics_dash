@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
-import json, threading, time, copy
-import epics
+import json, threading, time, copy, math
 
+import epics
 from bottle import route, run, static_file, redirect, abort
 from bottle import jinja2_view as view
 
@@ -29,6 +29,11 @@ def register_pv_value_in_history(pv_name, ts, value):
     global HISTORY
     if pv_name not in HISTORY:
         HISTORY[pv_name] = []
+    # If we are asked to put a float:NaN value into the history,
+    # repeat the previous value just before our new NaN value
+    # This is important to extend plot lines until the value gets invalid.
+    if len(HISTORY[pv_name]) > 0 and math.isnan(value):
+        HISTORY[pv_name].append( [ts-0.1, HISTORY[pv_name][1]] )
     HISTORY[pv_name].append( [ts, value] )
 
 def cb_connection_change(**kwargs):
@@ -60,6 +65,7 @@ def cb_connection_change(**kwargs):
         pv['unit'] = ''
         pv['classes'] = 'disconnected'
         pv['precision'] = None
+        register_pv_value_in_history(kwargs['pvname'], time.time(), float('nan'))
 
 
 def cb_value_update(**kwargs):
@@ -67,7 +73,6 @@ def cb_value_update(**kwargs):
     for pv in CONFIG['PVs']:
         if pv['name'] != kwargs['pvname']: continue
 
-        register_pv_value_in_history(kwargs['pvname'], kwargs['timestamp'], kwargs['value'])
         history_garbage_collection()
         class_map = {
           epics.NO_ALARM :      "",
@@ -87,6 +92,9 @@ def cb_value_update(**kwargs):
         else:
             pv['value'] = kwargs['value']
         pv['num_value'] = kwargs['value']
+        if kwargs['severity'] == epics.INVALID_ALARM:
+            pv['num_value'] = float('nan')
+        register_pv_value_in_history(kwargs['pvname'], kwargs['timestamp'], pv['num_value'])
         pv['precision'] = kwargs['precision']
         #if type(kwargs['precision']) == int and ('double' in kwargs['type'] or 'float' in kwargs['type']):
         #    pv['value'] = round(pv['value'], kwargs['precision'])
@@ -119,9 +127,13 @@ def api_values():
 
 @route('/api/history/<name>.json')
 def api_history(name):
-    history = copy.copy(HISTORY[name])
-    # repeat latest value in history (to make plot lines end 'now')
-    history.append([time.time(), history[-1][1]])
+    try:
+        history = copy.copy(HISTORY[name])
+    except KeyError:
+        abort(404, "PV not found")
+    if len(history) != 0:
+        # repeat latest value in history (to make plot lines end 'now')
+        history.append([time.time(), history[-1][1]])
     return {'history': history}
 
 @route('/static/<path:path>')
@@ -129,7 +141,7 @@ def static_content(path):
     return static_file(path, root='./static/')
 
 def main():
-    global CONFIG, PVS
+    global CONFIG, PVS, HISTORY
 
     import argparse, sys
     parser = argparse.ArgumentParser()
@@ -160,6 +172,7 @@ def main():
         pv['classes'] = 'disconnected'
         PVS[pv['name']] = epics.PV(pv['name'], auto_monitor=True, form='ctrl', callback=cb_value_update, connection_callback=cb_connection_change)
         CONFIG['PV_lookup'][pv['name']] = i
+        HISTORY[pv['name']] = []
 
     run(host=args.host, port=args.port, debug=args.debug)
 

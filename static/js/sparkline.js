@@ -127,7 +127,7 @@ function sparkline() {
       if (error) { console.log(error); return; }
 
       data.forEach(function (d) {
-        d[0] = new Date(d[0]);
+        d[0] = new Date(d[0] - (new Date().getTimezoneOffset()*60*1000));
         d[1] = d[1];
       });
 

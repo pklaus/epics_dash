@@ -77,6 +77,9 @@ function sparkline() {
 
     // Define the line
     var valueline = d3.line()
+      //.curve(d3.curveLinear)
+      //.curve(d3.curveMonotoneX)
+      .curve(d3.curveStepAfter)
       .defined(function (d) { return d[1] !== null; })
       .x(function (d) { return x(d[0]); })
       .y(function (d) { return y(d[1]); });

@@ -2,7 +2,7 @@
 
 // Built to closely follow reusable charts best practices doc: http://bost.ocks.org/mike/chart/
 
-var parseDate = d3.time.format("%d-%b-%y").parse,
+var parseDate = d3.timeFormat("%d-%b-%y").parse,
     bisectDate = d3.bisector(function(d) { return d[0]; }).left,
     formatValue = d3.format(",.3f");
 
@@ -72,11 +72,11 @@ function sparkline() {
     var height = chart.height();
     var gradient;
 
-    var x = d3.time.scale().range([0, width]);
-    var y = d3.scale.linear().range([height, 0]);
+    var x = d3.scaleTime().range([0, width]);
+    var y = d3.scaleLinear().range([height, 0]);
 
     // Define the line
-    var valueline = d3.svg.line()
+    var valueline = d3.line()
       .defined(function (d) { return d[1] !== null; })
       .x(function (d) { return x(d[0]); })
       .y(function (d) { return y(d[1]); });

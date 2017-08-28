@@ -109,14 +109,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="152.92856"
-       y="87.433647"
+       x="142.96916"
+       y="73.352425"
        id="text4140"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4142"
-         x="152.92856"
-         y="87.433647"
+         x="142.96916"
+         y="73.352425"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start">Huber CC-405</tspan></text>
     <g
        id="g4202"
@@ -137,7 +137,7 @@
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="171.23732"
+         x="163.23732"
          y="117.03556"
          id="CBM-MVD-COOLING-CC405-BathTemperatureMom_VAL"
          sodipodi:linespacing="125%"
@@ -145,8 +145,8 @@
          class="dynamic"><tspan
            sodipodi:role="line"
            id="tspan4150"
-           x="171.23732"
-           y="117.03556">14.00</tspan></text>
+           x="163.23732"
+           y="117.03556">XX.YY</tspan></text>
     </g>
     <g
        id="g4213">
@@ -185,7 +185,7 @@
     </g>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3, 3;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 543.78571,105.00507 0,177.14287"
+       d="m 529.64358,99.95431 0,177.14287"
        id="path4172"
        inkscape:connector-curvature="0" />
     <circle
@@ -237,8 +237,8 @@
          sodipodi:role="line">l/min</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="392.46072"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="432.94806"
        y="106.93404"
        id="CBM-MVD-COOLING-CC405-FLOW-IN-Flow_VAL"
        sodipodi:linespacing="125%"
@@ -246,8 +246,8 @@
        class="dynamic"><tspan
          sodipodi:role="line"
          id="tspan4192"
-         x="392.46072"
-         y="106.93404">0.000</tspan></text>
+         x="432.94806"
+         y="106.93404">X.YYY</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -265,74 +265,66 @@
        sodipodi:linespacing="125%"
        id="CBM-MVD-COOLING-CC405-FLOW-OUT-Flow_VAL"
        y="220.07112"
-       x="392.46072"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="431.9379"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:label="#text4198"
        class="dynamic"><tspan
          y="220.07112"
-         x="392.46072"
+         x="431.9379"
          id="tspan4200"
-         sodipodi:role="line">0.000</tspan></text>
-    <g
-       id="g4208"
-       transform="translate(420.22346,6.0609153)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="217.66588"
-         y="117.03556"
-         id="text4210"
-         sodipodi:linespacing="125%"
-         class="dynamic"><tspan
-           sodipodi:role="line"
-           id="tspan4212"
-           x="217.66588"
-           y="117.03556">deg C</tspan></text>
-      <text
-         sodipodi:linespacing="125%"
-         id="text4214"
-         y="117.03556"
-         x="171.23732"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"
-         class="dynamic"><tspan
-           y="117.03556"
-           x="171.23732"
-           id="tspan4216"
-           sodipodi:role="line">14.00</tspan></text>
-    </g>
-    <g
-       transform="translate(418.20315,131.31983)"
-       id="g4218">
-      <text
-         sodipodi:linespacing="125%"
-         id="text4220"
-         y="117.03556"
-         x="217.66588"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"
-         class="dynamic"><tspan
-           y="117.03556"
-           x="217.66588"
-           id="tspan4222"
-           sodipodi:role="line">deg C</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="171.23732"
-         y="117.03556"
-         id="text4224"
-         sodipodi:linespacing="125%"
-         class="dynamic"><tspan
-           sodipodi:role="line"
-           id="tspan4226"
-           x="171.23732"
-           y="117.03556">14.00</tspan></text>
-    </g>
+         sodipodi:role="line">X.YYY</tspan></text>
+    <text
+       class="dynamic"
+       sodipodi:linespacing="125%"
+       id="CBM-MVD-PT100-VAC-16_EGU"
+       y="123.09647"
+       x="631.88934"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="123.09647"
+         x="631.88934"
+         id="tspan4212"
+         sodipodi:role="line">deg C</tspan></text>
+    <text
+       class="dynamic"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="623.05975"
+       y="123.09647"
+       id="CBM-MVD-PT100-VAC-16_VAL"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4216"
+         x="623.05975"
+         y="123.09647">XX.YYY</tspan></text>
+    <text
+       class="dynamic"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="633.86902"
+       y="248.35539"
+       id="CBM-MVD-PT100-VAC-17_EGU"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4222"
+         x="633.86902"
+         y="248.35539">deg C</tspan></text>
+    <text
+       class="dynamic"
+       sodipodi:linespacing="125%"
+       id="CBM-MVD-PT100-VAC-17_VAL"
+       y="248.35539"
+       x="625.03949"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="248.35539"
+         x="625.03949"
+         id="tspan4226"
+         sodipodi:role="line">XX.YYY</tspan></text>
     <g
        id="g4241"
-       transform="matrix(0.72420726,0,0,0.72420726,-121.99231,265.29021)">
+       transform="matrix(0.72420726,0,0,0.72420726,-127.99231,265.29021)">
       <circle
          r="28.284271"
          cy="-45.307594"
@@ -370,28 +362,28 @@
          sodipodi:linespacing="125%"
          id="CBM-MVD-COOLING-CC405-PumpSpeed_VAL"
          y="114.51018"
-         x="184.62184"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="221.62184"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"
          inkscape:label="#text5725"
          class="dynamic"><tspan
            y="114.51018"
-           x="184.62184"
+           x="221.62184"
            id="tspan5727"
-           sodipodi:role="line">0000</tspan></text>
+           sodipodi:role="line">XXXX</tspan></text>
     </g>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="717.15033"
-       y="61.400867"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="898.23163"
+       y="58.370411"
        id="text4140-7"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4142-2"
-         x="717.15033"
-         y="61.400867"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start">PRESTO Heatsink</tspan></text>
+         x="898.23163"
+         y="58.370411"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;writing-mode:lr-tb;text-anchor:end">PRESTO Heatsink</tspan></text>
     <g
        id="g4219"
        transform="translate(0,50.002551)">
@@ -414,5 +406,22 @@
          transform="translate(133.42632,24.93434)"
          inkscape:connector-curvature="0" />
     </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3403"
+       y="56.497963"
+       x="533.52576"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;writing-mode:lr-tb;text-anchor:middle"
+         y="56.497963"
+         x="533.52576"
+         id="tspan3405"
+         sodipodi:role="line">Vacuum</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;writing-mode:lr-tb;text-anchor:middle"
+         y="75.247963"
+         x="533.52576"
+         sodipodi:role="line"
+         id="tspan3407">Feedthrough</tspan></text>
   </g>
 </svg>

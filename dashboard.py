@@ -93,6 +93,8 @@ def cb_value_update(**kwargs):
             pv['value'] = kwargs['value']
         pv['num_value'] = kwargs['value']
         if kwargs['severity'] == epics.INVALID_ALARM:
+            # avoid NaN (cannot be encoded in JSON) and outdated values if invalid
+            pv['value'] = None
             pv['num_value'] = None
         register_pv_value_in_history(kwargs['pvname'], kwargs['timestamp'], pv['num_value'])
         pv['precision'] = kwargs['precision']

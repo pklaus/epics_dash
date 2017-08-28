@@ -2,8 +2,9 @@
 
 import json, threading, time, copy, math
 
+import simplejson
 import epics
-from bottle import route, run, static_file, redirect, abort
+from bottle import route, run, static_file, redirect, abort, response, HTTPResponse
 from bottle import jinja2_view as view
 
 CONFIG = None
@@ -94,8 +95,8 @@ def cb_value_update(**kwargs):
         pv['num_value'] = kwargs['value']
         if kwargs['severity'] == epics.INVALID_ALARM:
             # avoid NaN (cannot be encoded in JSON) and outdated values if invalid
-            pv['value'] = None
-            pv['num_value'] = None
+            pv['value'] = float('nan')
+            pv['num_value'] = float('nan')
         register_pv_value_in_history(kwargs['pvname'], kwargs['timestamp'], pv['num_value'])
         pv['precision'] = kwargs['precision']
         #if type(kwargs['precision']) == int and ('double' in kwargs['type'] or 'float' in kwargs['type']):
@@ -106,6 +107,35 @@ def cb_value_update(**kwargs):
         pv['unit'] = kwargs['units'] or ''
         if pv['unit'] == 'deg C': pv['unit'] = '°C'
         if pv['unit'] == 'g/m3': pv['unit'] = 'g/m³'
+
+def json_replace_nan():
+    """
+    Custom JSON decorator for Bottle routes.
+    It converts a dictionary that you return to JSON before sending
+    it to the browser (just like Bottle would do, but replaces any
+    float('nan') value with a JSON-specs-compatible null.
+    Use like this:
+    @json_replace_nan()
+    before the def your_func() of a route().
+    """
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            try:
+                rv = func(*args, **kwargs)
+            except HTTPResponse as resp:
+                rv = resp
+            if isinstance(rv, dict):
+                #Attempt to serialize, raises exception on failure
+                json_response = simplejson.dumps(rv, ignore_nan=True)
+                #Set content type only if serialization successful
+                response.content_type = 'application/json'
+                return json_response
+            elif isinstance(rv, HTTPResponse) and isinstance(rv.body, dict):
+                rv.body = dumps(rv.body)
+                rv.content_type = 'application/json'
+            return rv
+        return wrapper
+    return decorator
 
 @route('/')
 def index():
@@ -124,10 +154,12 @@ def gview(name):
     return {'config': CONFIG, 'svg': name}
 
 @route('/api/values.json')
+@json_replace_nan()
 def api_values():
     return CONFIG
 
 @route('/api/history/<name>.json')
+@json_replace_nan()
 def api_history(name):
     try:
         history = copy.deepcopy(HISTORY[name])

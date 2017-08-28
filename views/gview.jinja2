@@ -3,7 +3,8 @@
 {% block title %}GView  {{ svg }}{% endblock %}
 
 {% block header %}
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"> </script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/static/js/gview.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -14,34 +15,8 @@
 	</div>
 {% endblock %}
 
-
 {% block js_end_of_page %}
 var update_every_ms = 2050;
-
-function updateStatus() {
-  $.getJSON("/api/values.json")
-    .fail(function( jqxhr, textStatus, error ) {
-      var err = textStatus + ", " + error;
-      console.log( "Request Failed: " + err );
-    })
-    .done(function( data ) {
-      var gview = document.getElementById("gview");
-      var svgDoc = gview.contentDocument;
-      // ----------
-      var svgItems = svgDoc.getElementsByClassName("dynamic");
-      [].forEach.call(svgItems, function (el) {
-        var el_id = el.id;
-        var pvName  = el_id.substring(0, el_id.lastIndexOf("_"));
-        var pvField = el_id.substring(el_id.lastIndexOf("_") + 1, el_id.length);
-        var pvName = pvName.replace(/-/g, ':');
-        var pv = data.PVs[data.PV_lookup[pvName]];
-        if (pvField == "VAL")
-          el.textContent = pv.value.toFixed(pv.precision);
-        else if (pvField == "EGU")
-          el.textContent = pv.unit
-      });
-    });
-};
 
 function timedUpdate() {
   updateStatus();

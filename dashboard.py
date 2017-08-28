@@ -13,6 +13,8 @@ HISTORY = {}
 GC_LAST_RUN = time.time()
 HISTORY_LENGTH=30*60
 
+# ------------ History management functions ------------
+
 def history_garbage_collection():
     global HISTORY, GC_LAST_RUN
     if GC_LAST_RUN > (time.time() - 5):
@@ -36,6 +38,8 @@ def register_pv_value_in_history(pv_name, ts, value):
     if len(HISTORY[pv_name]) > 0 and value is None:
         HISTORY[pv_name].append( [ts-0.1, HISTORY[pv_name][-1][1]] )
     HISTORY[pv_name].append( [ts, value] )
+
+# ------------ Callback functions for the PyEpics Channel Access events ------------
 
 def cb_connection_change(**kwargs):
     global CONFIG
@@ -108,6 +112,8 @@ def cb_value_update(**kwargs):
         if pv['unit'] == 'deg C': pv['unit'] = '°C'
         if pv['unit'] == 'g/m3': pv['unit'] = 'g/m³'
 
+# ---------- Bottle plugins / decorators ----------
+
 def json_replace_nan():
     """
     Custom JSON decorator for Bottle routes.
@@ -136,6 +142,8 @@ def json_replace_nan():
             return rv
         return wrapper
     return decorator
+
+# ---------- Bottle routes ----------
 
 @route('/')
 def index():
@@ -177,6 +185,8 @@ def api_history(name):
 @route('/static/<path:path>')
 def static_content(path):
     return static_file(path, root='./static/')
+
+# ---------- main() function - managing CLI arg parsing / startup ----------
 
 def main():
     global CONFIG, PVS, HISTORY

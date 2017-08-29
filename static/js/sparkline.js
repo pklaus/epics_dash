@@ -183,8 +183,8 @@ function sparkline() {
 
       function mousemove() {
         var x0 = x.invert(d3.mouse(this)[0]),
-            i = bisectDate(data, x0, 1),
-            d0 = data[i - 1],
+            i = bisectDate(data, x0, 0, data.length-2),
+            d0 = data[Math.max(0, i - 1)],
             d1 = data[i];
         //console.log(d3.mouse(this)[0]);
         //console.log(d3.mouse(this)[1]);

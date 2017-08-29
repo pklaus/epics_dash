@@ -164,6 +164,7 @@ function sparkline() {
             
       var focus = svg.append("g")
           .attr("class", "focus")
+          .attr("transform", "translate(-10,-10)")
           .style("display", "none");
 
       focus.append("circle")
@@ -191,13 +192,15 @@ function sparkline() {
         var d = x0 - d0[0] > d1[0] - x0 ? d1 : d0;
         //console.log(x(d[0]));
         //console.log(y(d[1]));
-        focus.attr("transform", "translate(" + x(d[0]) + "," + y(d[1]) + ")");
         var val = d[1];
-        if (precision != null)
+        if (val != null && precision != null)
           val = val.toFixed(precision);
-        tooltip_val.text(val);
-        var iso_date = d[0].toISOString();
-        tooltip_ts.text(iso_date.slice(11, 11+10));
+        if (val != null) {
+          focus.attr("transform", "translate(" + x(d[0]) + "," + y(d[1]) + ")");
+          tooltip_val.text(val);
+          var iso_date = d[0].toISOString();
+          tooltip_ts.text(iso_date.slice(11, 11+10));
+        }
       }
     }
   }

@@ -63,11 +63,13 @@ def cb_connection_change(**kwargs):
     for pv in CONFIG['PVs']:
         if pv['name'] != kwargs['pvname']: continue
 
-        pv['value'] = '- disconnected -'
-        pv['unit'] = ''
+        pv['value'] = float('nan')
+        pv['char_value'] = 'disconnected'
+        pv['num_value'] = float('nan')
+        #pv['unit'] = ''
         pv['classes'] = 'disconnected'
-        pv['precision'] = None
-        register_pv_value_in_history(kwargs['pvname'], time.time(), None)
+        #pv['precision'] = None
+        register_pv_value_in_history(kwargs['pvname'], time.time(), float('nan'))
 
 
 def cb_value_update(**kwargs):
@@ -94,10 +96,12 @@ def cb_value_update(**kwargs):
         else:
             pv['value'] = kwargs['value']
         pv['num_value'] = kwargs['value']
+        pv['char_value'] = kwargs['value']
         if kwargs['severity'] == epics.INVALID_ALARM:
             # avoid NaN (cannot be encoded in JSON) and outdated values if invalid
             pv['value'] = float('nan')
             pv['num_value'] = float('nan')
+            pv['char_value'] = 'invalid'
         register_pv_value_in_history(kwargs['pvname'], kwargs['timestamp'], pv['num_value'])
         pv['precision'] = kwargs['precision']
         #if type(kwargs['precision']) == int and ('double' in kwargs['type'] or 'float' in kwargs['type']):
@@ -214,8 +218,8 @@ def main():
     CONFIG['PV_lookup'] = {}
 
     for i, pv in enumerate(CONFIG['PVs']):
-        pv['value'] = '- disconnected (initial) -'
-        pv['unit'] = ''
+        pv['value'] = float('nan')
+        pv['unit'] = None
         pv['precision'] = None
         pv['classes'] = 'disconnected'
         PVS[pv['name']] = epics.PV(pv['name'], auto_monitor=True, form='ctrl', callback=cb_value_update, connection_callback=cb_connection_change)

@@ -21,12 +21,9 @@ def history_garbage_collection():
         return
     GC_LAST_RUN = time.time()
     for pv_name in HISTORY:
-        # delete entries older than HISTORY_LENGTH (but leave at least one entry in the list)
-        while (len(HISTORY[pv_name]) > 1) and (HISTORY[pv_name][0][0] < (time.time()-HISTORY_LENGTH)):
+        # delete entries older than HISTORY_LENGTH (but leave at least one entry older than that in the list)
+        while (len(HISTORY[pv_name]) >= 2) and (HISTORY[pv_name][1][0] < (time.time()-HISTORY_LENGTH)):
             del HISTORY[pv_name][0]
-        # if only one (outdated) entry left, update its time to now - HISTORY_LENGTH
-        if (len(HISTORY[pv_name]) == 1) and (HISTORY[pv_name][0][0] < (time.time()-HISTORY_LENGTH)):
-            HISTORY[pv_name][0][0] = time.time()-HISTORY_LENGTH
 
 def register_pv_value_in_history(pv_name, ts, value):
     global HISTORY
@@ -174,6 +171,9 @@ def api_history(name):
     except KeyError:
         abort(404, "PV not found")
     if len(history) != 0:
+        # if the first entry is older than HISTORY_LENGTH, we 'fake' its timestamp to be HISTORY_LENGTH
+        if history[0][0] < (time.time()-HISTORY_LENGTH):
+            history[0][0] = time.time()-HISTORY_LENGTH
         # repeat latest value in history (to make plot lines end 'now')
         history.append([time.time(), history[-1][1]])
     for row in history:

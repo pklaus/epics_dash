@@ -14,8 +14,12 @@
 			<h1>PRESTO - Overview<br/> Prototype of the Second Station of the Micro Vertex Detector of the Compressed Baryonic Matter</h1>
 		</div>
 		<nav class="menu_bar">
-			{% for page in config.pages %}
-			<a class="{{ 'active' if page == req_page else '' }}" href="/list/{{ page }}">{{ config.pages[page].name }}</a>
+			{% for page in config.page_hierarchy.top %}
+			<a class="{{ 'active' if page == req_page else '' }}" href="/list/{{ page }}">{{ config.pages[page].name }}</a> <span style="color: white;">→</span>
+				{% for page in config.page_hierarchy[page] %}
+				<a class="{{ 'active' if page == req_page else '' }}" href="/list/{{ page }}">{{ config.pages[page].name }}</a>
+				{% endfor %}
+			<br />
 			{% endfor %}
 		</nav>
 		<div id="content">

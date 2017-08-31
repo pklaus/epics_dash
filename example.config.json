@@ -98,6 +98,10 @@
 		{"name": "CBM:MVD:PT100:VAC:17"},
 		{"name": "CBM:MVD:PT100:VAC:CONV_RATE"}
 	],
+	"page_hierarchy": {
+			"top": ["general_overview"],
+			"general_overview": ["cooling_system", "low_voltage_system"]
+		},
 	"pages": {
 			"general_overview": {
 				"name": "General System Overview",

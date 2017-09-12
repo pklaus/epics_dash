@@ -32,7 +32,7 @@ def register_pv_value_in_history(pv_name, ts, value):
     # If we are asked to put a float:NaN value into the history,
     # repeat the previous value just before our new NaN value
     # This is important to extend plot lines until the value gets invalid.
-    if len(HISTORY[pv_name]) > 0 and value is None:
+    if len(HISTORY[pv_name]) > 0 and math.isnan(value):
         HISTORY[pv_name].append( [ts-0.1, HISTORY[pv_name][-1][1]] )
     HISTORY[pv_name].append( [ts, value] )
 

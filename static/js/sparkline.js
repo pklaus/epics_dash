@@ -11,6 +11,9 @@ function sparkline() {
   var width = 200;
   var height = 40;
   var precision = null;
+  var y_extent = null;
+  var upper_disp_limit = null;
+  var lower_disp_limit = null;
   var dataSource = '';
   var dataSourceType = '';
   var selector = 'body';
@@ -33,6 +36,24 @@ function sparkline() {
   chart.precision = function(value) {
     if (!arguments.length) return precision;
     precision = value;
+    return chart;
+  };
+
+  chart.y_extent = function(value) {
+    if (!arguments.length) return y_extent;
+    y_extent = value;
+    return chart;
+  };
+
+  chart.upper_disp_limit = function(value) {
+    if (!arguments.length) return upper_disp_limit;
+    upper_disp_limit = value;
+    return chart;
+  };
+
+  chart.lower_disp_limit = function(value) {
+    if (!arguments.length) return lower_disp_limit;
+    lower_disp_limit = value;
     return chart;
   };
 
@@ -117,8 +138,20 @@ function sparkline() {
       d3.json(chart.dataSource(), function(error, json) {
         if (error) return drawChart(error, json);
         chart.precision(json.precision);
+        chart.upper_disp_limit(json.upper_disp_limit);
+        chart.lower_disp_limit(json.lower_disp_limit);
+        calculateExtent(json.history);
         drawChart(error, json.history);
       });
+    }
+
+    function calculateExtent(data) {
+      if ((upper_disp_limit !== null) && (lower_disp_limit !== null))
+        y_extent = [lower_disp_limit, upper_disp_limit];
+      else {
+        y_extent = d3.extent(data, function (d) { return d[1]; });
+        if (y_extent[0] == y_extent[1]) y_extent = [ y_extent[0]-.5, y_extent[0]+.5];
+      }
     }
 
     /*
@@ -134,9 +167,7 @@ function sparkline() {
 
       // Scale the range of the data
       x.domain(d3.extent(data, function (d) { return d[0]; }));
-      var extent = d3.extent(data, function (d) { return d[1]; });
-      if (extent[0] == extent[1]) extent = [ extent[0]-.5, extent[0]+.5];
-      y.domain(extent);
+      y.domain(y_extent);
 
 
       // Add the valueline path.

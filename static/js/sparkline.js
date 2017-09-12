@@ -14,6 +14,7 @@ function sparkline() {
   var dataSource = '';
   var dataSourceType = '';
   var selector = 'body';
+  var id = Math.floor(Math.random()*16777215).toString(16);
   var gradientColors = ['green', 'orange', 'red'];
 
   // setters and getters
@@ -96,7 +97,7 @@ function sparkline() {
       // this defines the gradient used
       gradient = svg.append("defs")
         .append("linearGradient")
-          .attr("id", "gradient")
+          .attr("id", "gradient"+id)
           .attr("x1", "0%")   // starting x point
           .attr("y1", "0%")   // starting y point
           .attr("x2", "0%")   // ending x point
@@ -143,7 +144,7 @@ function sparkline() {
         .attr('class', 'line')
         .attr('stroke', function () {
           if (gradient) {
-            return 'url(#gradient)';
+            return 'url(#gradient'+id+')';
           }
           return '#444444';
         })

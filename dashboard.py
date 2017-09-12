@@ -103,30 +103,35 @@ def cb_value_update(**kwargs):
             pv['num_value'] = float('nan')
             pv['char_value'] = 'invalid'
         register_pv_value_in_history(kwargs['pvname'], kwargs['timestamp'], pv['num_value'])
+        # HOPR / LOPR
         if kwargs['upper_disp_limit'] != kwargs['lower_disp_limit']:
             pv['upper_disp_limit'] = kwargs['upper_disp_limit']
             pv['lower_disp_limit'] = kwargs['lower_disp_limit']
         else:
             pv['upper_disp_limit'] = float('nan')
             pv['lower_disp_limit'] = float('nan')
+        # HIHI / LOLO
         if kwargs['upper_alarm_limit'] != kwargs['lower_alarm_limit']:
             pv['upper_alarm_limit'] = kwargs['upper_alarm_limit']
             pv['lower_alarm_limit'] = kwargs['lower_alarm_limit']
         else:
             pv['upper_alarm_limit'] = float('nan')
             pv['lower_alarm_limit'] = float('nan')
+        # HIGH / LOW
         if kwargs['upper_warning_limit'] != kwargs['lower_warning_limit']:
             pv['upper_warning_limit'] = kwargs['upper_warning_limit']
             pv['lower_warning_limit'] = kwargs['lower_warning_limit']
         else:
             pv['upper_warning_limit'] = float('nan')
             pv['lower_warning_limit'] = float('nan')
+        # PREC
         pv['precision'] = kwargs['precision']
         #if type(kwargs['precision']) == int and ('double' in kwargs['type'] or 'float' in kwargs['type']):
         #    pv['value'] = round(pv['value'], kwargs['precision'])
         if kwargs['enum_strs'] == (b'OFF', b'ON'):
             pv['classes'] += ' switch'
         if pv['value'] is None: pv['value'] = '- disconnected -'
+        # EGU
         pv['unit'] = kwargs['units'] or ''
         if pv['unit'] == 'deg C': pv['unit'] = '°C'
         if pv['unit'] == 'g/m3': pv['unit'] = 'g/m³'

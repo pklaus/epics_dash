@@ -201,8 +201,11 @@ def api_history(name):
     for row in history:
         row[0] *= 1000.
     pv_index = CONFIG['PV_lookup'][name]
-    precision = CONFIG['PVs'][pv_index]['precision']
-    return {'history': history, 'precision': precision}
+    pv = CONFIG['PVs'][pv_index]
+    precision = pv['precision']
+    ret_dict = {'history': history}
+    ret_dict.update(pv)
+    return ret_dict
 
 @route('/static/<path:path>')
 def static_content(path):

@@ -14,11 +14,16 @@ function sparkline() {
   var y_extent = null;
   var upper_disp_limit = null;
   var lower_disp_limit = null;
+  var upper_warning_limit = null;
+  var lower_warning_limit = null;
+  var upper_alarm_limit = null;
+  var lower_alarm_limit = null;
   var dataSource = '';
   var dataSourceType = '';
   var selector = 'body';
   var id = Math.floor(Math.random()*16777215).toString(16);
-  var gradientColors = ['green', 'orange', 'red'];
+  var gradientColors = ['green', 'orange', 'red']; // OK, WARNING, ALARM
+  var gradient = null;
 
   // setters and getters
   chart.width = function(value) {
@@ -57,6 +62,30 @@ function sparkline() {
     return chart;
   };
 
+  chart.upper_warning_limit = function(value) {
+    if (!arguments.length) return upper_warning_limit;
+    upper_warning_limit = value;
+    return chart;
+  };
+
+  chart.lower_warning_limit = function(value) {
+    if (!arguments.length) return lower_warning_limit;
+    lower_warning_limit = value;
+    return chart;
+  };
+
+  chart.upper_alarm_limit = function(value) {
+    if (!arguments.length) return upper_alarm_limit;
+    upper_alarm_limit = value;
+    return chart;
+  };
+
+  chart.lower_alarm_limit = function(value) {
+    if (!arguments.length) return lower_alarm_limit;
+    lower_alarm_limit = value;
+    return chart;
+  };
+
   chart.dataSource = function(value) {
     if (!arguments.length) return dataSource;
     dataSource = value;
@@ -92,7 +121,6 @@ function sparkline() {
 
     var width = chart.width();
     var height = chart.height();
-    var gradient;
 
     var x = d3.scaleTime().range([0, width]);
     var y = d3.scaleLinear().range([height, 0]);
@@ -114,25 +142,6 @@ function sparkline() {
       .append('g')
         .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
-    if (chart.gradientColors() && chart.gradientColors().length) {
-      // this defines the gradient used
-      gradient = svg.append("defs")
-        .append("linearGradient")
-          .attr("id", "gradient"+id)
-          .attr("x1", "0%")   // starting x point
-          .attr("y1", "0%")   // starting y point
-          .attr("x2", "0%")   // ending x point
-          .attr("y2", "100%") // ending y point
-          .attr("gradientUnits", "userSpaceOnUse")
-          .attr("spreadMethod", "pad");
-
-      chart.gradientColors().forEach(function (color, index) {
-        gradient.append("stop")
-          .attr("offset", ((index * 100) / chart.gradientColors().length) + '%')
-          .attr("stop-color", color)
-          .attr("stop-opacity", 0.7);
-      })
-    }
 
     if (chart.dataSourceType().toLowerCase() === 'json') {
       d3.json(chart.dataSource(), function(error, json) {
@@ -140,7 +149,12 @@ function sparkline() {
         chart.precision(json.precision);
         chart.upper_disp_limit(json.upper_disp_limit);
         chart.lower_disp_limit(json.lower_disp_limit);
+        chart.upper_warning_limit(json.upper_warning_limit);
+        chart.lower_warning_limit(json.lower_warning_limit);
+        chart.upper_alarm_limit(json.upper_alarm_limit);
+        chart.lower_alarm_limit(json.lower_alarm_limit);
         calculateExtent(json.history);
+        createGradient();
         drawChart(error, json.history);
       });
     }
@@ -151,6 +165,78 @@ function sparkline() {
       else {
         y_extent = d3.extent(data, function (d) { return d[1]; });
         if (y_extent[0] == y_extent[1]) y_extent = [ y_extent[0]-.5, y_extent[0]+.5];
+      }
+    }
+
+    function createGradient() {
+      gradient = svg.append("defs")
+        .append("linearGradient")
+          .attr("id", "gradient"+id)
+          .attr("x1", "0%")   // starting x point
+          .attr("y1", "0%")   // starting y point
+          .attr("x2", "0%")   // ending x point
+          .attr("y2", "100%") // ending y point
+          .attr("gradientUnits", "userSpaceOnUse")
+          .attr("spreadMethod", "pad");
+      if (upper_alarm_limit !== null) {
+        perc_val = (upper_alarm_limit-upper_disp_limit)/(lower_disp_limit-upper_disp_limit)*100;
+        gradient.append("stop")
+          .attr("offset",  perc_val + '%')
+          .attr("stop-color", gradientColors[2])
+          .attr("stop-opacity", 0.7);
+        var color;
+        if (upper_warning_limit !== null)
+          color = gradientColors[1] // WARNING color
+        else
+          color = gradientColors[0] // OK color
+        gradient.append("stop")
+          .attr("offset",  perc_val + '%')
+          .attr("stop-color", color)
+          .attr("stop-opacity", 0.7);
+      }
+      if (upper_warning_limit !== null) {
+        perc_val = (upper_warning_limit-upper_disp_limit)/(lower_disp_limit-upper_disp_limit)*100;
+        gradient.append("stop")
+          .attr("offset", perc_val + '%')
+          .attr("stop-color", gradientColors[1])
+          .attr("stop-opacity", 0.7);
+        gradient.append("stop")
+          .attr("offset", perc_val + '%')
+          .attr("stop-color", gradientColors[0])
+          .attr("stop-opacity", 0.7);
+      }
+      if ((upper_alarm_limit === null) && (upper_warning_limit === null)) {
+        gradient.append("stop")
+          .attr("offset", '0%')
+          .attr("stop-color", gradientColors[0])
+          .attr("stop-opacity", 0.7);
+      }
+      if (lower_warning_limit !== null) {
+        perc_val = (lower_warning_limit-upper_disp_limit)/(lower_disp_limit-upper_disp_limit)*100;
+        gradient.append("stop")
+          .attr("offset", perc_val + '%')
+          .attr("stop-color", gradientColors[0])
+          .attr("stop-opacity", 0.7);
+        gradient.append("stop")
+          .attr("offset", perc_val + '%')
+          .attr("stop-color", gradientColors[1])
+          .attr("stop-opacity", 0.7);
+      }
+      if (lower_alarm_limit !== null) {
+        perc_val = (lower_alarm_limit-upper_disp_limit)/(lower_disp_limit-upper_disp_limit)*100;
+        var color;
+        if (lower_warning_limit !== null)
+          color = gradientColors[1] // WARNING color
+        else
+          color = gradientColors[0] // OK color
+        gradient.append("stop")
+          .attr("offset",  perc_val + '%')
+          .attr("stop-color", color)
+          .attr("stop-opacity", 0.7);
+        gradient.append("stop")
+          .attr("offset",  perc_val + '%')
+          .attr("stop-color", gradientColors[2])
+          .attr("stop-opacity", 0.7);
       }
     }
 

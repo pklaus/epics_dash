@@ -13,7 +13,7 @@ function updateSparklines() {
     var sparklineChart = sparkline()
                          .width(155)
                          .height(50)
-                         .gradientColors(['green', 'orange', 'red']) // top -> bottom
+                         .gradientColors(['green', 'orange', 'red']) // OK, WARNING, ALARM
                          .dataSource('/api/history/' + pvName + '.json')
                          .dataSourceType('JSON')
                          .selector('#'+el.id);

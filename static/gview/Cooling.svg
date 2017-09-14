@@ -335,17 +335,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="534.14703"
-     inkscape:cy="408.24705"
+     inkscape:zoom="2"
+     inkscape:cx="180.74538"
+     inkscape:cy="543.93547"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:snap-text-baseline="false"
      showguides="false"
      inkscape:window-width="1680"
-     inkscape:window-height="989"
-     inkscape:window-x="0"
+     inkscape:window-height="1021"
+     inkscape:window-x="1680"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:object-nodes="false"
@@ -376,7 +376,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2547,45 +2547,45 @@
        sodipodi:linespacing="125%"
        id="CBM-MVD-PT100-VAC-17_EGU"
        y="-191.82065"
-       x="340.96854"
+       x="364.96854"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        class="dynamic"><tspan
          y="-191.82065"
-         x="340.96854"
+         x="364.96854"
          id="tspan4222">deg C</tspan></text>
     <text
        sodipodi:linespacing="125%"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="332.13901"
-       y="-191.82065"
+       x="362.13901"
+       y="-191.32065"
        id="CBM-MVD-PT100-VAC-17_VAL"
        class="dynamic"><tspan
          id="tspan4226"
-         x="332.13901"
-         y="-191.82065">XX.YYY</tspan></text>
-    <text
-       sodipodi:linespacing="125%"
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="339.96857"
-       y="-133.82065"
-       id="CBM-MVD-PT100-VAC-16_EGU"
-       class="dynamic"><tspan
-         id="tspan4212"
-         x="339.96857"
-         y="-133.82065">deg C</tspan></text>
+         x="362.13901"
+         y="-191.32065">XX.YYY</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="CBM-MVD-PT100-VAC-16_VAL"
        y="-133.82065"
-       x="331.13898"
+       x="361.13898"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        class="dynamic"><tspan
          y="-133.82065"
-         x="331.13898"
+         x="361.13898"
          id="tspan4216">XX.YYY</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="364.6507"
+       y="-133.82065"
+       id="CBM-MVD-PT100-VAC-16_EGU"
+       class="dynamic"><tspan
+         id="tspan4212"
+         x="364.6507"
+         y="-133.82065">deg C</tspan></text>
   </g>
 </svg>

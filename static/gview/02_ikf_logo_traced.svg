@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="85.513336mm"
+   height="38.862mm"
+   viewBox="0 0 303.00001 137.7"
+   id="svg6273"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="ikf_logo_traced.svg">
+  <defs
+     id="defs6275" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8284272"
+     inkscape:cx="156.44062"
+     inkscape:cy="59.112606"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1680"
+     inkscape:window-height="988"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata6278">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(20.071421,-343.51224)">
+    <g
+       id="g6838"
+       style="fill:#0060aa;fill-opacity:1">
+      <path
+         sodipodi:nodetypes="cccccccccccccccccccccccccccccccsssccccsssccccccssscccsscccccc"
+         inkscape:connector-curvature="0"
+         id="path6832"
+         d="m -5.671421,365.86756 15.3,0 0,82.85606 -15.3,0 z m 30.617226,0 15.582774,0 0,36.53106 31.62066,-36.53106 19.85808,0 -28.028526,31.96416 30.249786,50.8919 -19.840233,0 -21.290682,-38.9112 -12.569085,13.63163 0,25.27957 -15.582774,0 z m 77.982775,41.24268 0,-41.24268 52.7305,0 0,13.64424 -37.43056,0 0,19.8 32.41106,0 -0.161,14.0276 -32.25,0 0,35.38422 -15.3,0 z m 68.1,0.51943 2.925,0.21248 c 3.72973,0.27094 11.21973,1.21376 15.71089,1.97768 28.2511,4.8053 51.4019,14.35674 67.50149,27.84941 2.83035,2.37206 9.86262,9.62178 9.86262,10.11704 l -96,0 z m 95.7,35.57095 c -3.7319,-4.34874 -10.63534,-10.19518 -16.95,-14.35477 -14.53964,-9.57752 -31.38966,-15.96756 -55.2,-20.93355 -1.88562,-0.39327 1.79725,-0.44117 36.075,-0.4692 l 38.1375,-0.0312 0,38.08053 c -0.0412,-0.0107 -0.99,-1.04202 -2.0625,-2.29179 z m -95.7,-78.45697 96.47016,0 c -0.64672,1.15563 -6.49177,6.88688 -9.61473,9.54759 -14.94542,12.73323 -35.59831,21.83826 -61.50734,27.11612 -7.6302,1.55433 -20.41539,3.30453 -24.13956,3.30453 l -1.20853,0 z m 28.53069,38.76685 c 24.19622,-5.30634 43.55089,-13.82233 58.16931,-25.59431 1.7325,-1.39515 4.93875,-4.36072 7.125,-6.59015 l 3.9375,-4.05352 0,37.43937 -37.2375,-0.0217 -37.275,-0.0217 5.28069,-1.15808 z"
+         style="opacity:1;fill:#0060aa;fill-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text6834"
+         y="470.25406"
+         x="-8.3118572"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#0060aa;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="470.25406"
+           x="-8.3118572"
+           id="tspan6836"
+           sodipodi:role="line">Institut für Kernphysik Frankfurt</tspan></text>
+    </g>
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#0060aa;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect7980"
+       width="303"
+       height="137"
+       x="-20.071421"
+       y="344.21225" />
+  </g>
+</svg>

@@ -8,6 +8,10 @@
 {% endblock %}
 
 {% block content %}
+	<div id="heartbeat" class="inactive" style="width: 10px; height: 10px; border-radius: 5px;">
+	  <div class="cover" style="width: 100%; height: 100%; radius: 5px; background-color: #ffff;">
+	  </div>
+	</div>
 	<div class="gview">
 		<object id="gview" style="margin: 2ex auto; display: block;" class="gview gview-{{ svg }}" data="/static/gview/{{ svg }}.svg" type="image/svg+xml">
 		Your browser doesn't support SVG

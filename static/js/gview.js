@@ -3,6 +3,8 @@ function updateStatus() {
     .fail(function( jqxhr, textStatus, error ) {
       var err = textStatus + ", " + error;
       console.log( "Request Failed: " + err );
+      $('#heartbeat').attr('class', 'warning')
+      $('#heartbeat .cover').fadeTo(200, 1.0, function() { $(this).fadeTo(200, 0.0); });
     })
     .done(function( data ) {
       var gview = document.getElementById("gview");
@@ -25,5 +27,7 @@ function updateStatus() {
         else if (pvField == "EGU")
           el.textContent = pv.unit;
       });
+      $('#heartbeat').attr('class', 'ok')
+      $('#heartbeat .cover').fadeTo(200, 1.0, function() { $(this).fadeTo(200, 0.0); });
     });
 };

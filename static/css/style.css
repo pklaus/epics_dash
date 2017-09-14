@@ -182,3 +182,13 @@ div.error {
   content: attr(data-checked);
   background-color: #0099CC;
 }
+
+#heartbeat.inactive {
+  background-color: #666;
+}
+#heartbeat.ok {
+  background-color: #0d2;
+}
+#heartbeat.warning {
+  background-color: #f44;
+}

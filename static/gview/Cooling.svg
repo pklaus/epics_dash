@@ -2437,26 +2437,18 @@
        sodipodi:linespacing="125%"
        class="dynamic"
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
        x="166.43048"
        y="50.157623"
-       id="CBM-MVD-COOLING-CC405-PumpSpeed_VAL"><tspan
-         id="tspan5727"
-         x="166.43048"
-         y="50.157623"
-         style="fill:#ffffff;fill-opacity:1">XXXX</tspan></text>
+       id="CBM-MVD-COOLING-CC405-PumpSpeed_VAL">XXXX</text>
     <text
        sodipodi:linespacing="125%"
        class="dynamic"
        id="CBM-MVD-COOLING-CC405-PumpSpeed_EGU"
        y="50.617828"
        x="172.46527"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="50.617828"
-         x="172.46527"
-         id="tspan5723"
-         style="fill:#ffffff;fill-opacity:1">rpm</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       xml:space="preserve">rpm</text>
     <text
        sodipodi:linespacing="125%"
        class="dynamic"

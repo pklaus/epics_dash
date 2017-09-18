@@ -190,7 +190,11 @@ def list_pvs(page):
 @route('/gview/<name>')
 @view('gview.jinja2')
 def gview(name):
-    return {'config': CONFIG, 'svg': name}
+    try:
+        svg = CONFIG['pages'][name]['gview']
+    except KeyError:
+        return abort(404, 'Page not found')
+    return {'config': CONFIG, 'svg': svg}
 
 @route('/api/values.json')
 @json_replace_nan()

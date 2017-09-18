@@ -1,4 +1,4 @@
-{% extends "base.jinja2" %}
+{% extends "base_bootstrap.jinja2" %}
 
 {% block title %}GView  {{ svg }}{% endblock %}
 
@@ -13,7 +13,7 @@
 	  </div>
 	</div>
 	<div class="gview">
-		<object id="gview" style="margin: 2ex auto; display: block;" class="gview gview-{{ svg }}" data="/static/gview/{{ svg }}.svg" type="image/svg+xml">
+		<object id="gview" style="margin: 2ex auto; display: block;" class="gview gview-{{ svg }}" data="{{ svg }}" type="image/svg+xml">
 		Your browser doesn't support SVG
 		</object>
 	</div>

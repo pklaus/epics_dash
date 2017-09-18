@@ -99,8 +99,10 @@
 		{"name": "CBM:MVD:PT100:VAC:CONV_RATE"}
 	],
 	"page_hierarchy": {
-			"top": ["general_overview"],
-			"general_overview": ["cooling_system", "low_voltage_system"]
+			"top": ["top_list"],
+			"top_gview": ["gview_cooling", "gview_cooling_vac"],
+			"top_list": ["general_overview"],
+			"general_overview": ["cooling_system", "low_voltage_system", "relhum"]
 		},
 	"pages": {
 			"general_overview": {
@@ -114,11 +116,25 @@
 					"temperature"
 				]
 			},
+			"gview_cooling": {
+				"name": "PRESTO Cooling System",
+				"gview": "/static/gview/cooling.svg"
+                        },
+			"gview_cooling_vac": {
+				"name": "PRESTO Cooling & Vaccum System",
+				"gview": "/static/gview/Cooling.svg"
+                        },
 			"cooling_system": {
 				"name": "Details Cooling System",
 				"groups": [
 					"cooling_extended"
 				]
+                        },
+                        "relhum": {
+                                "name": "Relative Humidity",
+                                "groups": [
+                                        "relhum"
+                                ]
                         },
                         "low_voltage_system": {
                                 "name": "Details Low Voltage",

@@ -179,20 +179,18 @@ function sparkline() {
       var color;
       var upper_perc_offset = margin.top / (height + margin.top + margin.bottom) * 100;
       var lower_perc_offset = (margin.top + height) / (height + margin.top + margin.bottom) * 100;
-      var m = (lower_perc_offset - upper_perc_offset) / 100;
 
       gradient = svg.append("defs")
         .append("linearGradient")
           .attr("id", "gradient"+id)
-          .attr("x1", "0%")   // starting x point
+          .attr("x1", "0")   // starting x point
           .attr("y1", "0%")   // starting y point
-          .attr("x2", "0%")   // ending x point
-          .attr("y2", "100%") // ending y point
+          .attr("x2", "0")   // ending x point
+          .attr("y2", height) // ending y point
           .attr("gradientUnits", "userSpaceOnUse")
           .attr("spreadMethod", "pad");
       if (upper_alarm_limit !== null) {
         perc_val = (upper_alarm_limit-upper_disp_limit)/(lower_disp_limit-upper_disp_limit)*100;
-        perc_val = upper_perc_offset + m * perc_val;
         gradient.append("stop")
           .attr("offset",  perc_val + '%')
           .attr("stop-color", gradientColors[2]) // ALARM color
@@ -208,7 +206,6 @@ function sparkline() {
       }
       if (upper_warning_limit !== null) {
         perc_val = (upper_warning_limit-upper_disp_limit)/(lower_disp_limit-upper_disp_limit)*100;
-        perc_val = upper_perc_offset + m * perc_val;
         gradient.append("stop")
           .attr("offset", perc_val + '%')
           .attr("stop-color", gradientColors[1]) // WARNING color
@@ -231,7 +228,6 @@ function sparkline() {
           .attr("stop-opacity", 0.7);
       if (lower_warning_limit !== null) {
         perc_val = (lower_warning_limit-upper_disp_limit)/(lower_disp_limit-upper_disp_limit)*100;
-        perc_val = upper_perc_offset + m * perc_val;
         gradient.append("stop")
           .attr("offset", perc_val + '%')
           .attr("stop-color", gradientColors[0]) // OK color
@@ -243,7 +239,6 @@ function sparkline() {
       }
       if (lower_alarm_limit !== null) {
         perc_val = (lower_alarm_limit-upper_disp_limit)/(lower_disp_limit-upper_disp_limit)*100;
-        perc_val = upper_perc_offset + m * perc_val;
         if (lower_warning_limit !== null)
           color = gradientColors[1]; // WARNING color
         else

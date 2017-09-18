@@ -173,6 +173,13 @@ def json_replace_nan():
 def index():
     redirect('/list/general_overview')
 
+@route('/list_bs/<page>')
+@view('pv_overview_bootstrap.jinja2')
+def list_pvs_bs(page):
+    if page not in CONFIG['pages']:
+        return abort(404, 'Page not found')
+    return {'config': CONFIG, 'req_page': page}
+
 @route('/list/<page>')
 @view('pv_overview.jinja2')
 def list_pvs(page):

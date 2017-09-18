@@ -4,22 +4,7 @@
 
 {% block header %}
 <meta http-equiv="refresh" content="15">
-<style>
-/* Sparklines Styling */
-path {
-  stroke-width: 1;
-  fill: none;
-}
-.focus circle {
-  fill: none;
-  stroke: steelblue;
-}
-.overlay {
-  fill: none;
-  pointer-events: all;
-}
-</style>
-
+<link rel="stylesheet" href="/static/css/sparkline.css">
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="/static/js/sparkline.js"></script>
 {% endblock %}

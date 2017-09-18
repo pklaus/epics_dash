@@ -1,0 +1,13 @@
+/* Sparklines Styling */
+path {
+  stroke-width: 1;
+  fill: none;
+}
+.focus circle {
+  fill: none;
+  stroke: steelblue;
+}
+.overlay {
+  fill: none;
+  pointer-events: all;
+}

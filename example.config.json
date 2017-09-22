@@ -100,7 +100,7 @@
 	],
 	"page_hierarchy": {
 			"top": ["top_list"],
-			"top_gview": ["gview_cooling", "gview_cooling_vac"],
+			"top_gview": ["cooling_schematic", "presto_pictorial"],
 			"top_list": ["general_overview"],
 			"general_overview": ["cooling_system", "low_voltage_system", "relhum"]
 		},
@@ -116,13 +116,13 @@
 					"temperature"
 				]
 			},
-			"gview_cooling": {
-				"name": "PRESTO Cooling System",
-				"gview": "/static/gview/cooling.svg"
+			"cooling_schematic": {
+				"name": "PRESTO Cooling System (schematic)",
+				"gview": "/static/gview/cooling_schematic.svg"
                         },
-			"gview_cooling_vac": {
-				"name": "PRESTO Cooling & Vaccum System",
-				"gview": "/static/gview/Cooling.svg"
+			"presto_pictorial": {
+				"name": "PRESTO Cooling & Vaccum System (pictorial)",
+				"gview": "/static/gview/presto_pictorial.svg"
                         },
 			"cooling_system": {
 				"name": "Details Cooling System",

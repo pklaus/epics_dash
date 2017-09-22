@@ -10,9 +10,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="575.74274"
+   width="655.59528"
    height="418.47653"
-   viewBox="0 0 575.74275 418.47654"
+   viewBox="0 0 655.59529 418.47654"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -336,8 +336,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="308.42977"
-     inkscape:cy="146.5293"
+     inkscape:cx="429.01083"
+     inkscape:cy="261.52932"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -358,15 +358,15 @@
      inkscape:object-paths="false"
      inkscape:snap-center="false"
      units="px"
-     fit-margin-right="24.3"
+     fit-margin-right="25"
      fit-margin-left="25"
      fit-margin-top="25"
      fit-margin-bottom="25">
     <inkscape:grid
        type="xygrid"
        id="grid5061"
-       originx="-49.214517"
-       originy="-864.0022" />
+       originx="-49.214518"
+       originy="-864.00218" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -376,7 +376,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1006,17 +1006,6 @@
     <text
        sodipodi:linespacing="125%"
        class="dynamic"
-       id="CBM-MVD-COOLING-CC405-BathTemperatureMom_VAL"
-       y="-3.1702576"
-       x="88.777908"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="-3.1702576"
-         x="88.777908"
-         id="tspan4150">XX.YY</tspan></text>
-    <text
-       sodipodi:linespacing="125%"
-       class="dynamic"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="141.82942"
@@ -1048,7 +1037,7 @@
        class="dynamic"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="166.43048"
+       x="168.43048"
        y="50.157623"
        id="CBM-MVD-COOLING-CC405-PumpSpeed_VAL">XXXX</text>
     <text
@@ -1056,7 +1045,7 @@
        class="dynamic"
        id="CBM-MVD-COOLING-CC405-PumpSpeed_EGU"
        y="50.617828"
-       x="172.46527"
+       x="170.46527"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve">rpm</text>
     <text
@@ -1191,7 +1180,7 @@
          y="-133.82065">deg C</tspan></text>
     <g
        id="layer1-3"
-       transform="matrix(0.13541913,0,0,0.13541913,195.04922,108.77665)">
+       transform="matrix(0.13541913,0,0,0.13541913,177.04922,129.77665)">
       <g
          transform="translate(28.571421,-336.06433)"
          id="g6838"
@@ -1206,14 +1195,68 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="177.62115"
-       y="120.9091"
+       x="159.62115"
+       y="141.9091"
        id="text4564"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4566"
-         x="177.62115"
-         y="120.9091"
-         style="font-size:12.5px">© O.Artz</tspan></text>
+         x="159.62115"
+         y="141.9091"
+         style="font-size:12.5px">© O.Artz, P.Klaus</tspan></text>
+    <text
+       class="dynamic"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="637.71851"
+       y="-43.945648"
+       id="CBM-MVD-VACUUM-RECIPIENT-3-Pressure_EGU"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan9484"
+         x="637.71851"
+         y="-43.945648">bar</tspan></text>
+    <text
+       class="dynamic"
+       id="CBM-MVD-VACUUM-RECIPIENT-3-Pressure_VAL"
+       y="-43.445648"
+       x="630.88904"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       sodipodi:linespacing="125%"><tspan
+         y="-43.445648"
+         x="630.88904"
+         id="tspan9488">x.xE-y</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path9490"
+       d="M 592.32644,4.3673095 608.02886,-41.38347"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.32280412px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <circle
+       r="3.7746093"
+       cy="5.7690239"
+       cx="591.87494"
+       id="circle9492"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.46030205;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.89369154px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="589.73486"
+       y="8.4572554"
+       id="text9494"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan9496"
+         x="589.73486"
+         y="8.4572554">P</tspan></text>
+    <text
+       class="dynamic"
+       id="CBM-MVD-COOLING-CC405-BathTemperatureMom_VAL"
+       y="-3.3206482"
+       x="136.13901"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       sodipodi:linespacing="125%"><tspan
+         y="-3.3206482"
+         x="136.13901"
+         id="tspan4567">XX.YY</tspan></text>
   </g>
 </svg>

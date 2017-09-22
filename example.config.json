@@ -111,9 +111,9 @@
 					"example",
 					"cooling",
 					"low_voltage",
-					"pressure",
-					"environment",
-					"temperature"
+					"selection_pressure",
+					"selection_environment",
+					"selection_temperature"
 				]
 			},
 			"cooling_schematic": {
@@ -123,6 +123,18 @@
 			"presto_pictorial": {
 				"name": "PRESTO Cooling & Vaccum System (pictorial)",
 				"gview": "/static/gview/presto_pictorial.svg"
+                        },
+			"pressure": {
+				"name": "Details Vacuum System",
+				"groups": [
+					"pressure"
+				]
+                        },
+			"environment": {
+				"name": "Details Laboratory Environment",
+				"groups": [
+					"environment"
+				]
                         },
 			"cooling_system": {
 				"name": "Details Cooling System",
@@ -155,7 +167,6 @@
 				"name": "Cooling",
 				"PVs": [
 					"CBM:MVD:COOLING:CC405:BathTemperatureMom",
-					"CBM:MVD:COOLING:CC405:ExternalTemperatureMom",
 					"CBM:MVD:COOLING:CC405:SetpointMom",
 					"CBM:MVD:COOLING:CC405:FLOW:IN:Flow",
 					"CBM:MVD:COOLING:CC405:FLOW:IN:Total",
@@ -201,7 +212,6 @@
 			"low_voltage": {
 				"name": "Low Voltage",
 				"PVs": [
-					"CBM:MVD:POWER:PRESTO_RECIPIENT:GetGeneralOutput",
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOutput",
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOutput",
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOutput",
@@ -210,7 +220,8 @@
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetVoltage",
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetCurrent",
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetCurrent",
-					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetCurrent"
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetCurrent",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:GetGeneralOutput"
 				]
 			},
 			"low_voltage_extended": {
@@ -246,6 +257,14 @@
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPMode"
 				]
 			},
+			"selection_pressure": {
+				"name": "Pressure",
+				"PVs": [
+					"CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_A:TPR2:Voltage",
+					"CBM:MVD:VACUUM:RECIPIENT:3:Pressure",
+					"CBM:MVD:VACUUM:RECIPIENT:3:Status"
+				]
+			},
 			"pressure": {
 				"name": "Pressure",
 				"PVs": [
@@ -259,6 +278,15 @@
 					"CBM:MVD:VACUUM:RECIPIENT:2:Status",
 					"CBM:MVD:VACUUM:RECIPIENT:3:Pressure",
 					"CBM:MVD:VACUUM:RECIPIENT:3:Status"
+				]
+			},
+			"selection_temperature": {
+				"name": "Temperature",
+				"PVs": [
+					"CBM:MVD:PT100:VAC:06",
+					"CBM:MVD:PT100:VAC:14",
+					"CBM:MVD:PT100:VAC:16",
+					"CBM:MVD:PT100:VAC:17"
 				]
 			},
 			"temperature": {
@@ -280,6 +308,14 @@
 					"CBM:MVD:PT100:VAC:15",
 					"CBM:MVD:PT100:VAC:16",
 					"CBM:MVD:PT100:VAC:17"
+				]
+			},
+			"selection_environment": {
+				"name": "Enviroment",
+				"PVs": [
+					"CBM:MVD:ENVIRON:OPUS20_CLEANROOM:Temperature",
+					"CBM:MVD:ENVIRON:OPUS20_CLEANROOM:Dewpoint",
+					"CBM:MVD:ENVIRON:OPUS20_CLEANROOM:RelativeHumidity"
 				]
 			},
 			"environment": {

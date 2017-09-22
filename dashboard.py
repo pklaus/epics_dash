@@ -171,7 +171,7 @@ def json_replace_nan():
 
 @route('/')
 def index():
-    redirect('/list/general_overview')
+    redirect('/list_bs/general_overview')
 
 @route('/list_bs/<page>')
 @view('pv_overview_bootstrap.jinja2')

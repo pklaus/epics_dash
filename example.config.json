@@ -102,7 +102,7 @@
 			"top": ["top_list"],
 			"top_gview": ["cooling_schematic", "presto_pictorial"],
 			"top_list": ["general_overview"],
-			"general_overview": ["cooling_system", "low_voltage_system", "relhum"]
+			"general_overview": ["cooling_system", "low_voltage_system"]
 		},
 	"pages": {
 			"general_overview": {
@@ -141,12 +141,6 @@
 				"groups": [
 					"cooling_extended"
 				]
-                        },
-                        "relhum": {
-                                "name": "Relative Humidity",
-                                "groups": [
-                                        "relhum"
-                                ]
                         },
                         "low_voltage_system": {
                                 "name": "Details Low Voltage",

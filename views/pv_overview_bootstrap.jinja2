@@ -14,6 +14,20 @@
   margin-bottom: 20px;
   padding: 10px;
 }
+.icon {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+  color: #000;
+  fill: currentColor;
+  display: inline-block;
+  vertical-align: text-top;
+}
+.btn-copy {
+  cursor: pointer;
+}
 </style>
 {% endblock %}
 
@@ -32,8 +46,14 @@
 					<div class="col-md-4">
 					<div class="pv-block value indicator {{ PV.classes }}" style="cursor: pointer;" title="{{ PV.alias }}">
 						<div class="error"></div>
-						<div class="pvname">{{ PV.name }}</div>
-						<div class="value-unit-box">
+						<div class="pvname">{{ PV.alias or PV.name }}</div>
+						<div class="btn-group">
+							<a class="btn btn-sm btn-outline-primary btn-pv" href="/pv/{{ PV.name }}" title="Details page for PV {{ PV.name }}">PV</a>
+							<button type="button" class="btn btn-sm btn-outline-primary btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" data-copy="{{ PV.name }}" title="Copy PV name to clipboard">
+								<img class="icon" src="/static/images/clipboard.svg">
+							</button>
+						</div>
+						<div class="value-unit-box" style="display: inline-block;">
 							<span class="value">
 							{% if 'switch' in PV.classes %}
 								<label class="toggle">
@@ -71,4 +91,51 @@ $(function() {
 });
 */
 updateSparklines();
+
+function copyToClipboard(text, el) {
+  // COPY TO CLIPBOARD
+  // Attempts to use .execCommand('copy') on a created text field
+  // Falls back to a selectable alert if not supported
+  // Attempts to display status in Bootstrap tooltip
+  // ------------------------------------------------------------------------------
+  var copyTest = document.queryCommandSupported('copy');
+  var elOriginalText = el.attr('data-original-title');
+
+  if (copyTest === true) {
+    var copyTextArea = document.createElement("textarea");
+    copyTextArea.value = text;
+    document.body.appendChild(copyTextArea);
+    copyTextArea.select();
+    try {
+      var successful = document.execCommand('copy');
+      var msg = successful ? 'Copied!' : 'Whoops, not copied!';
+      el.attr('data-original-title', msg).tooltip('show');
+    } catch (err) {
+      console.log('Oops, unable to copy');
+    }
+    document.body.removeChild(copyTextArea);
+    el.attr('data-original-title', elOriginalText);
+  } else {
+    // Fallback if browser doesn't support .execCommand('copy')
+    window.prompt("Copy to clipboard: Ctrl+C or Command+C, Enter", text);
+  }
+}
+
+$(document).ready(function() {
+  // Initialize
+  // ---------------------------------------------------------------------
+
+  // Tooltips
+  // Requires Bootstrap 3 for functionality
+  $('.js-tooltip').tooltip();
+
+  // Copy to clipboard
+  // Grab any text in the attribute 'data-copy' and pass it to the 
+  // copy function
+  $('.js-copy').click(function() {
+    var text = $(this).attr('data-copy');
+    var el = $(this);
+    copyToClipboard(text, el);
+  });
+});
 {% endblock %}

@@ -102,7 +102,7 @@
 			"top": ["top_list"],
 			"top_gview": ["cooling_schematic", "presto_pictorial"],
 			"top_list": ["general_overview"],
-			"general_overview": ["cooling_system", "low_voltage_system"]
+			"general_overview": ["cooling_system", "low_voltage_system", "pressure", "environment", "temperature"]
 		},
 	"pages": {
 			"general_overview": {
@@ -123,6 +123,12 @@
 			"presto_pictorial": {
 				"name": "PRESTO Cooling & Vaccum System (pictorial)",
 				"gview": "/static/gview/presto_pictorial.svg"
+                        },
+			"temperature": {
+				"name": "Details Temperature Measurements",
+				"groups": [
+					"temperature"
+				]
                         },
 			"pressure": {
 				"name": "Details Vacuum System",
@@ -252,7 +258,7 @@
 				]
 			},
 			"selection_pressure": {
-				"name": "Pressure",
+				"name": "Vacuum Pressure",
 				"PVs": [
 					"CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_A:TPR2:Voltage",
 					"CBM:MVD:VACUUM:RECIPIENT:3:Pressure",
@@ -260,7 +266,7 @@
 				]
 			},
 			"pressure": {
-				"name": "Pressure",
+				"name": "Vacuum Pressure (extended)",
 				"PVs": [
 					"CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_A:IKR:Voltage",
 					"CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_A:TPR2:Voltage",
@@ -275,7 +281,7 @@
 				]
 			},
 			"selection_temperature": {
-				"name": "Temperature",
+				"name": "Temperature Probes",
 				"PVs": [
 					"CBM:MVD:PT100:VAC:06",
 					"CBM:MVD:PT100:VAC:14",
@@ -284,7 +290,7 @@
 				]
 			},
 			"temperature": {
-				"name": "Temperature",
+				"name": "Temperature Probes (extended)",
 				"PVs": [
 					"CBM:MVD:PT100:VAC:00",
 					"CBM:MVD:PT100:VAC:01",

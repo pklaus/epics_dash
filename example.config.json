@@ -108,12 +108,12 @@
 			"general_overview": {
 				"name": "General System Overview",
 				"groups": [
-					"example",
 					"cooling",
 					"low_voltage",
 					"selection_pressure",
 					"selection_environment",
-					"selection_temperature"
+					"selection_temperature",
+					"disconnected_example"
 				]
 			},
 			"cooling_schematic": {
@@ -151,8 +151,8 @@
                 },
 
 	"groups": {
-			"example": {
-				"name": "EXAMPLE",
+			"disconnected_example": {
+				"name": "Example of Disconnected PV",
 				"PVs": [
 					"CBM:MVD:EXAMPLE:DISCONECTED_EXAMPLE"
 				]

@@ -1,0 +1,74 @@
+{% extends "base_bootstrap.jinja2" %}
+
+{% block title %}PV Details {{ pv_name }}{% endblock %}
+
+{% block header %}
+<meta http-equiv="refresh" content="15">
+<link rel="stylesheet" href="/static/css/sparkline.css">
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/static/js/sparkline.js"></script>
+<style>
+.details-list .row {
+  border-bottom: 1px solid #fff;
+}
+.details-list .row :nth-child(even){
+  background-color: #bbcdea;
+}
+.details-list .row :nth-child(odd){
+  background-color: #a8c6f7;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<h2>Process Variable Details</h2>
+<h3>{{ pv_name }}</h3>
+{% set PV = config.PVs[config.PV_lookup[pv_name]] %}
+<div class="pv-block value indicator {{ PV.classes }}">
+	<div class="error"></div>
+	<div class="pvname" style="overflow-wrap:break-word;">{{ PV.alias or PV.name }}</div>
+	<div class="btn-group">
+		<a class="btn btn-sm btn-outline-primary btn-pv" href="/pv/{{ PV.name }}" title="Details page for PV {{ PV.name }}">PV</a>
+		<button type="button" class="btn btn-sm btn-outline-primary btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" data-copy="{{ PV.name }}" title="Copy PV name to clipboard">
+			<img class="icon" src="/static/images/clipboard.svg">
+		</button>
+	</div>
+	<div class="value-unit-box" style="display: inline-block;">
+		<span class="value">
+		{% if 'switch' in PV.classes %}
+			<label class="toggle">
+				<input type="checkbox" disabled readonly {{ 'checked' if 'ON' in PV.value else '' }}>
+				<span data-unchecked="OFF" data-checked="ON"></span>
+			</label>
+		{% else %}
+        		{% if PV.precision is number %}
+				{{ ("%."+PV.precision|string +"f") % PV.value }}
+			{% else %}
+				{{ PV.value }}
+			{% endif %}
+		{% endif %}
+		</span>
+		<span class="unit">{{ PV.unit }}</span>
+	</div>
+	<div id="sparkline-{{ PV.name|replace(':','-') }}" class="sparkline"></div></td>
+	<div class="details-list container">
+		{% for key in PV %}
+		<div class="details-set row">
+			<div class="col details-set-key"  >{{ key }}</div>
+			<div class="col details-set-value">{{ PV[key] }}</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
+
+
+{% block js_end_of_page %}
+/*
+$(function() {
+  // on page load
+  updateSparklines();
+});
+*/
+updateSparklines();
+{% endblock %}

@@ -173,6 +173,11 @@ def json_replace_nan():
 def index():
     redirect('/list_bs/general_overview')
 
+@route('/pv/<pv_name>')
+@view('pv_details_bootstrap.jinja2')
+def pv_details(pv_name):
+    return {'pv_name': pv_name, 'config': CONFIG}
+
 @route('/list_bs/<page>')
 @view('pv_overview_bootstrap.jinja2')
 def list_pvs_bs(page):

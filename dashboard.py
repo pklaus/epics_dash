@@ -199,7 +199,7 @@ def gview(name):
         svg = CONFIG['pages'][name]['gview']
     except KeyError:
         return abort(404, 'Page not found')
-    return {'config': CONFIG, 'svg': svg}
+    return {'config': CONFIG, 'req_page': name, 'svg': svg}
 
 @route('/api/values.json')
 @json_replace_nan()

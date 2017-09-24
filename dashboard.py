@@ -239,7 +239,7 @@ def main():
 
     import argparse, sys
     parser = argparse.ArgumentParser()
-    parser.add_argument('--host', default='',
+    parser.add_argument('--host', default='0.0.0.0',
           help='The host (IP address) the web server should listen on.')
     parser.add_argument('--port', default=4913,
           help='The port the web server should listen on.')

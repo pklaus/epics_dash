@@ -4,7 +4,7 @@ import json, threading, time, copy, math
 
 import simplejson
 import epics
-from bottle import route, run, static_file, redirect, abort, response, HTTPResponse
+from bottle import route, run, static_file, redirect, abort, response, HTTPResponse, server_names
 from bottle import jinja2_view as view
 
 CONFIG = None
@@ -245,6 +245,9 @@ def main():
           help='The port the web server should listen on.')
     parser.add_argument('--config', '-c', required=True,
           help='The config file with the definition of process variables and EPICS hosts.')
+    parser.add_argument('--server', default='wsgiref',
+          help='Server engine to run the application. Valid choices: ' + ', '.join(server_names) + '. '
+               'The default is wsgiref (try bjoern or paste for high performance and read https://goo.gl/SmPFZb).')
     parser.add_argument('--debug', action='store_true',
           help='Set the debug mode of the web server.')
     args = parser.parse_args()
@@ -268,6 +271,6 @@ def main():
         CONFIG['PV_lookup'][pv['name']] = i
         HISTORY[pv['name']] = []
 
-    run(host=args.host, port=args.port, debug=args.debug)
+    run(host=args.host, port=args.port, debug=args.debug, server=args.server)
 
 if __name__ == "__main__": main()

@@ -4,7 +4,7 @@ import json, threading, time, copy, math
 
 import simplejson
 import epics
-from bottle import route, run, static_file, redirect, abort, response, HTTPResponse, server_names
+from bottle import Bottle, route, run, static_file, redirect, abort, response, HTTPResponse, server_names
 from bottle import jinja2_view as view
 
 CONFIG = None
@@ -176,30 +176,32 @@ def json_replace_nan():
 
 # ---------- Bottle routes ----------
 
-@route('/')
+app = Bottle()
+
+@app.route('/')
 def index():
     redirect('/list_bs/general_overview')
 
-@route('/pv/<pv_name>')
+@app.route('/pv/<pv_name>')
 @view('pv_details_bootstrap.jinja2')
 def pv_details(pv_name):
     return {'pv_name': pv_name, 'config': CONFIG}
 
-@route('/list_bs/<page>')
+@app.route('/list_bs/<page>')
 @view('pv_overview_bootstrap.jinja2')
 def list_pvs_bs(page):
     if page not in CONFIG['pages']:
         return abort(404, 'Page not found')
     return {'config': CONFIG, 'req_page': page}
 
-@route('/list/<page>')
+@app.route('/list/<page>')
 @view('pv_overview.jinja2')
 def list_pvs(page):
     if page not in CONFIG['pages']:
         return abort(404, 'Page not found')
     return {'config': CONFIG, 'req_page': page}
 
-@route('/gview/<name>')
+@app.route('/gview/<name>')
 @view('gview.jinja2')
 def gview(name):
     try:
@@ -208,12 +210,12 @@ def gview(name):
         return abort(404, 'Page not found')
     return {'config': CONFIG, 'req_page': name, 'svg': svg}
 
-@route('/api/values.json')
+@app.route('/api/values.json')
 @json_replace_nan()
 def api_values():
     return CONFIG
 
-@route('/api/history/<name>.json')
+@app.route('/api/history/<name>.json')
 @json_replace_nan()
 def api_history(name):
     try:
@@ -235,7 +237,7 @@ def api_history(name):
     ret_dict.update(pv)
     return ret_dict
 
-@route('/static/<path:path>')
+@app.route('/static/<path:path>')
 def static_content(path):
     return static_file(path, root='./static/')
 

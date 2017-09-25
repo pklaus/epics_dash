@@ -103,6 +103,13 @@ def cb_value_update(**kwargs):
             pv['num_value'] = float('nan')
             pv['char_value'] = 'invalid'
         register_pv_value_in_history(kwargs['pvname'], kwargs['timestamp'], pv['num_value'])
+        # DRVL / DRVH
+        if kwargs['upper_ctrl_limit'] != kwargs['lower_ctrl_limit']:
+            pv['upper_ctrl_limit'] = kwargs['upper_ctrl_limit']
+            pv['lower_ctrl_limit'] = kwargs['lower_ctrl_limit']
+        else:
+            pv['upper_ctrl_limit'] = float('nan')
+            pv['lower_ctrl_limit'] = float('nan')
         # HOPR / LOPR
         if kwargs['upper_disp_limit'] != kwargs['lower_disp_limit']:
             pv['upper_disp_limit'] = kwargs['upper_disp_limit']

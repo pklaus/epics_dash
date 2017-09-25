@@ -54,8 +54,8 @@
 	<div class="details-list container">
 		{% for key in PV %}
 		<div class="details-set row">
-			<div class="col details-set-key"  >{{ key }}</div>
-			<div class="col details-set-value">{{ PV[key] }}</div>
+			<div class="col col-md-6 details-set-key"  >{{ property_name_mapping[key] or key }}</div>
+			<div class="col col-md-6 details-set-value">{{ PV[key]|string }}</div>
 		</div>
 		{% endfor %}
 	</div>

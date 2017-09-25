@@ -187,7 +187,26 @@ def index():
 @app.route('/pv/<pv_name>')
 @view('pv_details_bootstrap.jinja2')
 def pv_details(pv_name):
-    return {'pv_name': pv_name, 'config': CONFIG}
+    property_name_mapping = {
+      'name': 'Process Variable Name',
+      'alias': 'Alias',
+      'descr': 'Description',
+      'value': 'Value',
+      'unit': 'Unit of Value',
+      'precision': 'Precision of Value',
+      'classes': 'Classes / Tags',
+      'num_value': 'Numerical Value',
+      'char_value': 'String Representation of Value',
+      'upper_ctrl_limit': 'Upper Control Range Limit',
+      'lower_ctrl_limit': 'Lower Control Range Limit',
+      'upper_disp_limit': 'Upper Operator Display Limit',
+      'lower_disp_limit': 'Lower Operator Display Limit',
+      'upper_alarm_limit': 'Upper Alarm Limit',
+      'lower_alarm_limit': 'Lower Alarm Limit',
+      'upper_warning_limit': 'Upper Warning Limit',
+      'lower_warning_limit': 'Lower Warning Limit',
+    }
+    return {'pv_name': pv_name, 'config': CONFIG, 'property_name_mapping': property_name_mapping}
 
 @app.route('/list_bs/<page>')
 @view('pv_overview_bootstrap.jinja2')

@@ -3,7 +3,7 @@
 		{"name": "CBM:MVD:EXAMPLE:DISCONECTED_EXAMPLE"},
 
 		{"name": "CBM:MVD:COOLING:CC405:BathTemperatureMom", "alias": "Current Heat Bath Temperature", "descr": ""},
-		{"name": "CBM:MVD:COOLING:CC405:ExternalTemperatureMom", "alias": "External Laboratory Temperaturea"},
+		{"name": "CBM:MVD:COOLING:CC405:ExternalTemperatureMom", "alias": "External Laboratory Temperature"},
 		{"name": "CBM:MVD:COOLING:CC405:SetpointMom", "alias": "Cooling Setpoint Temperature"},
 		{"name": "CBM:MVD:COOLING:CC405:FLOW:IN:Flow", "alias": "Coolant Flow Towards Detector (PRESTO Inlet)"},
 		{"name": "CBM:MVD:COOLING:CC405:FLOW:IN:Total", "alias": "Integrated Coolant Flow (Volume) Towards Detector (PRESTO Inlet)"},
@@ -227,7 +227,6 @@
 			"low_voltage_extended": {
 				"name": "Low Voltage (extended)",
 				"PVs": [
-					"CBM:MVD:POWER:PRESTO_RECIPIENT:GetGeneralOutput",
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOutput",
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOutput",
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOutput",
@@ -254,7 +253,8 @@
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPVoltageMax",
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOVPMode",
 					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN2:GetOVPMode",
-					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPMode"
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN3:GetOVPMode",
+					"CBM:MVD:POWER:PRESTO_RECIPIENT:GetGeneralOutput"
 				]
 			},
 			"selection_pressure": {

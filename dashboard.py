@@ -4,8 +4,10 @@ import json, threading, time, copy, math
 
 import simplejson
 import epics
-from bottle import Bottle, route, run, static_file, redirect, abort, response, HTTPResponse, server_names
+from bottle import Bottle, run, static_file, redirect, abort, response, HTTPResponse, server_names
 from bottle import jinja2_view as view
+from requestlogger import WSGILogger, ApacheFormatter
+from logging.handlers import TimedRotatingFileHandler
 
 CONFIG = None
 PVS = {}
@@ -244,7 +246,7 @@ def static_content(path):
 # ---------- main() function - managing CLI arg parsing / startup ----------
 
 def main():
-    global CONFIG, PVS, HISTORY
+    global CONFIG, PVS, HISTORY, app
 
     import argparse, sys
     parser = argparse.ArgumentParser()
@@ -257,6 +259,8 @@ def main():
     parser.add_argument('--server', default='wsgiref',
           help='Server engine to run the application. Valid choices: ' + ', '.join(server_names) + '. '
                'The default is wsgiref (try bjoern or paste for high performance and read https://goo.gl/SmPFZb).')
+    parser.add_argument('--logfile',
+          help='If provided, the server will log requests to this file in "Apache format".')
     parser.add_argument('--debug', action='store_true',
           help='Set the debug mode of the web server.')
     args = parser.parse_args()
@@ -280,6 +284,10 @@ def main():
         CONFIG['PV_lookup'][pv['name']] = i
         HISTORY[pv['name']] = []
 
-    run(host=args.host, port=args.port, debug=args.debug, server=args.server)
+    if args.logfile:
+        handlers = [ TimedRotatingFileHandler(args.logfile, when='W0', interval=1) , ]
+        app = WSGILogger(app, handlers, ApacheFormatter())
+
+    run(app, host=args.host, port=args.port, debug=args.debug, server=args.server)
 
 if __name__ == "__main__": main()

@@ -28,7 +28,7 @@
 	<div class="error"></div>
 	<div class="pvname" style="overflow-wrap:break-word;">{{ PV.alias or PV.name }}</div>
 	<div class="btn-group">
-		<a class="btn btn-sm btn-outline-primary btn-pv" href="/pv/{{ PV.name }}" title="Details page for PV {{ PV.name }}">PV</a>
+		<a class="btn btn-sm btn-outline-primary btn-pv" href="/pv/{{ PV.name }}" title="{{ PV.name }}">PV</a>
 		<button type="button" class="btn btn-sm btn-outline-primary btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" data-copy="{{ PV.name }}" title="Copy PV name to clipboard">
 			<img class="icon" src="/static/images/clipboard.svg">
 		</button>

@@ -231,12 +231,12 @@ def gview(name):
         return abort(404, 'Page not found')
     return {'config': CONFIG, 'req_page': name, 'svg': svg}
 
-@app.route('/api/values.json')
+@app.route('/api/current_state')
 @json_replace_nan()
 def api_values():
     return CONFIG
 
-@app.route('/api/history/<name>.json')
+@app.route('/api/history/<name>')
 @json_replace_nan()
 def api_history(name):
     try:

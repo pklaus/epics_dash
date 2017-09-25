@@ -1,5 +1,5 @@
 function updateStatus() {
-  $.getJSON("/api/values.json")
+  $.getJSON("/api/current_state")
     .fail(function( jqxhr, textStatus, error ) {
       var err = textStatus + ", " + error;
       console.log( "Request Failed: " + err );

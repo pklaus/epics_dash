@@ -1,5 +1,5 @@
 /* Sparklines Styling */
-path {
+.sparkline path {
   stroke-width: 1;
   fill: none;
 }

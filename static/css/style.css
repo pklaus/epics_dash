@@ -227,3 +227,6 @@ div.error {
 .btn-copy {
   cursor: pointer;
 }
+.pvname, .break-word {
+  overflow-wrap: break-word;
+}

@@ -88,8 +88,6 @@ def cb_value_update(**kwargs):
           None : "disconnected",
         }
         pv['classes'] = class_map[kwargs['severity']]
-        #print(kwargs['pvname'], kwargs['type'])
-        #print(kwargs)
         if 'enum' in kwargs['type']:
             if type(kwargs['char_value']) is bytes:
                  pv['value'] = kwargs['char_value'].decode('ascii')
@@ -206,7 +204,20 @@ def pv_details(pv_name):
       'upper_warning_limit': 'Upper Warning Limit',
       'lower_warning_limit': 'Lower Warning Limit',
     }
-    return {'pv_name': pv_name, 'config': CONFIG, 'property_name_mapping': property_name_mapping}
+    epics_ioc_terminology = {
+      'value': 'VAL',
+      'unit': 'EGU',
+      'precision': 'PREC',
+      'upper_ctrl_limit': 'DRVH',
+      'lower_ctrl_limit': 'DRVL',
+      'upper_disp_limit': 'HOPR',
+      'lower_disp_limit': 'LOPR',
+      'upper_alarm_limit': 'HIHI',
+      'lower_alarm_limit': 'LOLO',
+      'upper_warning_limit': 'HIGH',
+      'lower_warning_limit': 'LOW',
+    }
+    return {'pv_name': pv_name, 'config': CONFIG, 'property_name_mapping': property_name_mapping, 'epics_ioc_terminology': epics_ioc_terminology}
 
 @app.route('/list_bs/<page>')
 @view('pv_overview_bootstrap.jinja2')

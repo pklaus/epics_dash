@@ -54,7 +54,7 @@
 	<div class="details-list container">
 		{% for key in PV %}
 		<div class="details-set row">
-			<div class="col col-md-6 details-set-key"  >{{ property_name_mapping[key] or key }}</div>
+			<div class="col col-md-6 details-set-key"  >{{ property_name_mapping[key] or key }}{% if key in epics_ioc_terminology %} ({{epics_ioc_terminology[key]}}){%endif%}</div>
 			<div class="col col-md-6 details-set-value">{{ PV[key]|string }}</div>
 		</div>
 		{% endfor %}

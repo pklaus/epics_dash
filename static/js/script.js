@@ -3,7 +3,7 @@ alert("whats up");
 console.log("what's up?");
 */
 
-function updateSparklines() {
+function updateSparklines(width, height) {
   var sparklineItems = document.getElementsByClassName("sparkline");
   [].forEach.call(sparklineItems, function (el) {
     var el_id = el.id;
@@ -11,8 +11,8 @@ function updateSparklines() {
     var pvName = pvName.replace(/-/g, ':');
 
     var sparklineChart = sparkline()
-                         .width(155)
-                         .height(50)
+                         .width(width)
+                         .height(height)
                          .gradientColors(['green', 'orange', 'red']) // OK, WARNING, ALARM
                          .dataSource('/api/history/' + pvName)
                          .dataSourceType('JSON')

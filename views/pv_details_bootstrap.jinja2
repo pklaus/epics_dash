@@ -8,14 +8,14 @@
 <script src="/static/external/d3/d3.v4.min.js"></script>
 <script src="/static/js/sparkline.js"></script>
 <style>
-.details-list .row {
+.details-list .row-striped {
   border-bottom: 1px solid #fff;
 }
-.details-list .row :nth-child(even){
-  background-color: #bbcdea;
+.row-striped:nth-of-type(odd){
+  background-color: #cbddfa;
 }
-.details-list .row :nth-child(odd){
-  background-color: #a8c6f7;
+.row-striped:nth-of-type(even){
+  background-color: #b8d6ff;
 }
 </style>
 {% endblock %}
@@ -53,7 +53,7 @@
 	<div id="sparkline-{{ PV.name|replace(':','-') }}" class="sparkline"></div></td>
 	<div class="details-list container">
 		{% for key in PV %}
-		<div class="details-set row">
+		<div class="details-set row row-striped">
 			<div class="col col-md-6 details-set-key"  >{{ property_name_mapping[key] or key }}{% if key in epics_ioc_terminology %} ({{epics_ioc_terminology[key]}}){%endif%}</div>
 			<div class="col col-md-6 details-set-value">{{ PV[key]|string }}</div>
 		</div>

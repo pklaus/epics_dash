@@ -67,10 +67,10 @@
        class="animated"
        id="path4156"
        d="m 284.60302,179.95643 c 0,0 84.85281,-28.28427 144.45181,1.01015 59.599,29.29443 136.37059,29.29443 183.84776,26.26397 47.47717,-3.03046 77.78175,-9.09137 77.78175,-9.09137"
-       style="fill:none;fill-rule:evenodd;stroke:#d400a7;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:30, 10;stroke-dashoffset:0;stroke-opacity:1" />
+       style="fill:none;fill-rule:evenodd;stroke:#d400a7;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:30, 2;stroke-dashoffset:0;stroke-opacity:1" />
     <path
        class="animated"
-       style="fill:none;fill-rule:evenodd;stroke:#0000a7;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:30, 10;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:none;fill-rule:evenodd;stroke:#0000a7;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:30, 2;stroke-dashoffset:0;stroke-opacity:1"
        d="m 694.12439,143.5518 c 0,0 -5.48023,7.39036 -71.72083,12.12183 -42.4264,3.03046 -114.26957,4.38686 -190.91883,-23.23351 -71.19476,-25.65485 -147.48227,-2.02031 -147.48227,-2.02031"
        id="path4158" />
     <rect

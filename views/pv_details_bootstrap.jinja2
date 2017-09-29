@@ -21,12 +21,12 @@
 {% endblock %}
 
 {% block content %}
-<h2>Process Variable Details</h2>
-<h3>{{ pv_name }}</h3>
 {% set PV = config.PVs[config.PV_lookup[pv_name]] %}
+<h4>Process Variable Details</h4>
+<h3>{{ PV.alias or pv_name }}</h3>
+{% if PV.alias %}<h5>{{ pv_name }}</h5>{% endif %}
 <div class="pv-block value indicator {{ PV.classes }}">
 	<div class="error"></div>
-	<div class="pvname" style="overflow-wrap:break-word;">{{ PV.alias or PV.name }}</div>
 	<div class="btn-group">
 		<a class="btn btn-sm btn-outline-primary btn-pv" href="/pv/{{ PV.name }}" title="{{ PV.name }}">PV</a>
 		<button type="button" class="btn btn-sm btn-outline-primary btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" data-copy="{{ PV.name }}" title="Copy PV name to clipboard">
@@ -34,7 +34,7 @@
 		</button>
 	</div>
 	<div class="value-unit-box" style="display: inline-block;">
-		<span class="value">
+		Current Value: <span class="value">
 		{% if 'switch' in PV.classes %}
 			<label class="toggle">
 				<input type="checkbox" disabled readonly {{ 'checked' if 'ON' in PV.value else '' }}>

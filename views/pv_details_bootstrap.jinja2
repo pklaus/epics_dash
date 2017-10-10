@@ -67,11 +67,20 @@
 
 
 {% block js_end_of_page %}
-/*
 $(function() {
-  // on page load
-  updateSparklines();
+  /* on page load */
+
+  // create sparklines
+  updateSparklines(850, 130);
+
+  // Tooltips (requires Bootstrap >3)
+  $('.js-tooltip').tooltip();
+
+  // Copy to clipboard
+  $('.js-copy').click(function() {
+    var text = $(this).attr('data-copy');
+    var el = $(this);
+    copyToClipboard(text, el);
+  });
 });
-*/
-updateSparklines();
 {% endblock %}

@@ -31,7 +31,7 @@
 		Current Value: <span class="value">
 		{% if 'switch' in PV.classes %}
 			<label class="toggle">
-				<input type="checkbox" disabled readonly {{ 'checked' if 'ON' in PV.value else '' }}>
+				<input type="checkbox" disabled readonly {{ 'checked' if PV.value in (1, 'ON') else '' }}>
 				<span data-unchecked="OFF" data-checked="ON"></span>
 			</label>
 		{% else %}

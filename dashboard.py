@@ -9,6 +9,13 @@ from bottle import jinja2_view as view
 from requestlogger import WSGILogger, ApacheFormatter
 from logging.handlers import TimedRotatingFileHandler
 
+
+try:
+    import numpy as np
+    HAS_NUMPY = True
+except ImportError:
+    HAS_NUMPY = False
+
 CONFIG = None
 PVS = {}
 HISTORY = {}
@@ -80,6 +87,9 @@ def cb_value_update(**kwargs):
         if pv['name'] != kwargs['pvname']: continue
 
         history_garbage_collection()
+        for prop in ('value', 'char_value'):
+            if HAS_NUMPY and isinstance(kwargs[prop], np.ndarray):
+                kwargs[prop] = kwargs[prop].tolist()
         class_map = {
           epics.NO_ALARM :      "",
           epics.MINOR_ALARM :   "minor_alarm",

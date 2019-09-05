@@ -48,7 +48,7 @@
 							</span>
 							<span class="unit">{{ PV.unit }}</span>
 						</div>
-						<div id="sparkline-{{ PV.name|replace(':','-') }}" class="sparkline"></div>
+						<div id="sparkline-{{ PV.name|replace(':','-COLON-')|replace('.','-DOT-') }}" class="sparkline"></div>
                                 	</div>
                                 	</div>
 				{% if (loop.index0 % 3 == 2) or loop.last %}

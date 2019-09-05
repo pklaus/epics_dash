@@ -8,7 +8,7 @@ function updateSparklines(width, height) {
   [].forEach.call(sparklineItems, function (el) {
     var el_id = el.id;
     var pvName = el_id.substring(el_id.indexOf("-")+1, el_id.length);
-    var pvName = pvName.replace(/-/g, ':');
+    var pvName = pvName.replace(/-COLON-/g, ':').replace(/-DOT-/g, '.');
 
     var sparklineChart = sparkline()
                          .width(width)

@@ -143,7 +143,7 @@ def cb_value_update(**kwargs):
             pv['lower_warning_limit'] = float('nan')
         # PREC
         pv['precision'] = kwargs['precision']
-        #if type(kwargs['precision']) == int and ('double' in kwargs['type'] or 'float' in kwargs['type']):
+        #if type(kwargs['precision']) == int and kwargs['precision'] > 0 and ('double' in kwargs['type'] or 'float' in kwargs['type']):
         #    pv['value'] = round(pv['value'], kwargs['precision'])
         if kwargs['enum_strs'] == (b'OFF', b'ON'):
             pv['classes'] += ' switch'

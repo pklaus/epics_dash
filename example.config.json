@@ -335,7 +335,9 @@
 					"CBM:MVD:COOLING:CC405:FLOW:IN:Flow",
 					"CBM:MVD:COOLING:CC405:FLOW:IN:Total",
 					"CBM:MVD:COOLING:CC405:FLOW:OUT:Flow",
-					"CBM:MVD:COOLING:CC405:FLOW:OUT:Total"
+					"CBM:MVD:COOLING:CC405:FLOW:OUT:Total",
+					"CBM:MVD:PT100:VAC:16",
+					"CBM:MVD:PT100:VAC:17"
 				]
 			},
 			"readout_extended": {
@@ -431,7 +433,9 @@
 					"CBM:MVD:COOLING:CC405:FLOW:IN:Flow",
 					"CBM:MVD:COOLING:CC405:FLOW:IN:Total",
 					"CBM:MVD:COOLING:CC405:FLOW:OUT:Flow",
-					"CBM:MVD:COOLING:CC405:FLOW:OUT:Total"
+					"CBM:MVD:COOLING:CC405:FLOW:OUT:Total",
+					"CBM:MVD:PT100:VAC:16",
+					"CBM:MVD:PT100:VAC:17"
 				]
 			},
 			"low_voltage": {

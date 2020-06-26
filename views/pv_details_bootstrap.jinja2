@@ -44,7 +44,7 @@
 		</span>
 		<span class="unit">{{ PV.unit }}</span>
 	</div>
-	<div id="sparkline-{{ PV.name|replace(':','-') }}" class="sparkline"></div></td>
+	<div id="sparkline-{{ PV.name|replace(':','-COLON-')|replace('.','-DOT-') }}" class="sparkline"></div></td>
 	<div class="details-list container">
 		{% for key in PV %}
 		<div class="details-set row row-striped">

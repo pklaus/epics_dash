@@ -38,12 +38,9 @@
 		{"name": "CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_B:IKR:Voltage", "alias": "Analog Output Voltage of IKR Pressure Gauge (vessel flange B)"},
 		{"name": "CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_B:TPR2:Voltage", "alias": "Analog Output Voltage of TPR2 Pressure Gauge (vessel flange B)"},
 
-		{"name": "CBM:MVD:VACUUM:RECIPIENT:1:Pressure"},
-		{"name": "CBM:MVD:VACUUM:RECIPIENT:1:Status"},
-		{"name": "CBM:MVD:VACUUM:RECIPIENT:2:Pressure"},
-		{"name": "CBM:MVD:VACUUM:RECIPIENT:2:Status"},
-		{"name": "CBM:MVD:VACUUM:RECIPIENT:3:Pressure", "alias": "Vacuum Pressure measured with Pirani Gauge (main vessel)"},
-		{"name": "CBM:MVD:VACUUM:RECIPIENT:3:Status", "alias": "State of the Pirani Gauge (main vessel)"},
+		{"name": "CBM:MVD:VACUUM:PRESTO:Pressure", "alias": "Pressure in PRESTO Recipient"},
+		{"name": "CBM:MVD:VACUUM:PRESTO:Temperature", "alias": "Temperature of Vacuum Gauge connected to PRESTO Recipient"},
+		{"name": "CBM:MVD:VACUUM:PRESTO:HoursOn", "alias": "On Time of Vacuum Gauge connected to PRESTO Recipient"},
 
 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:GetGeneralOutput", "alias": "General (global) Output State of the HMC-4030 power supply"},
 		{"name": "CBM:MVD:POWER:PRESTO_RECIPIENT:CHAN1:GetOutput", "alias": "Output State (Channel 1)"},
@@ -488,9 +485,9 @@
 			"selection_pressure": {
 				"name": "Vacuum Pressure",
 				"PVs": [
-					"CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_A:TPR2:Voltage",
-					"CBM:MVD:VACUUM:RECIPIENT:3:Pressure",
-					"CBM:MVD:VACUUM:RECIPIENT:3:Status"
+					"CBM:MVD:VACUUM:PRESTO:Pressure",
+					"CBM:MVD:VACUUM:PRESTO:Temperature",
+					"CBM:MVD:VACUUM:PRESTO:HoursOn"
 				]
 			},
 			"pressure": {
@@ -500,12 +497,9 @@
 					"CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_A:TPR2:Voltage",
 					"CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_B:IKR:Voltage",
 					"CBM:MVD:VACUUM:PRESTO_RECIPIENT:SIDE_B:TPR2:Voltage",
-					"CBM:MVD:VACUUM:RECIPIENT:1:Pressure",
-					"CBM:MVD:VACUUM:RECIPIENT:1:Status",
-					"CBM:MVD:VACUUM:RECIPIENT:2:Pressure",
-					"CBM:MVD:VACUUM:RECIPIENT:2:Status",
-					"CBM:MVD:VACUUM:RECIPIENT:3:Pressure",
-					"CBM:MVD:VACUUM:RECIPIENT:3:Status"
+					"CBM:MVD:VACUUM:PRESTO:Pressure",
+					"CBM:MVD:VACUUM:PRESTO:Temperature",
+					"CBM:MVD:VACUUM:PRESTO:HoursOn"
 				]
 			},
 			"selection_temperature": {
